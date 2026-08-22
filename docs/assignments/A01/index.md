@@ -1,30 +1,30 @@
-# A1 — Build Your Professional Portfolio
+# A1: Build Your Professional Portfolio
 
 ## Part 2: Decide
 
-The Decide pillar asks one question: can you make a choice between alternatives, document your criteria, and justify your selection? The following three decisions were made before any other content was written on this page.
+These three decisions were made before building out the rest of this page, as required by the assignment.
 
 ---
 
 ### Decision 1: Homepage Identity
 
-The homepage of this portfolio serves a single reader: an engineer — whether a grader, a peer, or a future employer — who has arrived at this URL and needs to determine within thirty seconds what this site contains, how it is organized, and whether the work inside meets a defensible standard. The homepage therefore opens with the course identifier and the framework that governs every entry (Analyze, Decide, Communicate), because that framework tells the reader *how* to evaluate each assignment, not just where to find it. The semester arc section provides a chronological map so the reader can locate any assignment by its position in the design sequence without navigating blindly through sidebar links. The About Me section is placed on the homepage rather than behind a separate navigation link because the most common use case — a recruiter or instructor scanning the portfolio for the first time — requires both the author's identity and the portfolio's organizational logic to be visible on the same page without an additional click. Every element on the homepage exists to reduce the reader's time-to-orientation; content that serves the author's self-expression rather than the reader's navigation efficiency was excluded.
+The homepage is written for someone visiting this portfolio for the first time, whether that is a grader, a classmate, or a recruiter. It opens with the course name and the Analyze/Decide/Communicate framework because that tells the reader how each assignment is structured, not just where to find it. The semester arc section gives a quick map of how the assignments build on each other so the reader does not have to click through the sidebar blindly. The About Me section sits directly on the homepage instead of behind a separate link because the most common visitor (someone scanning quickly) needs to see both who I am and how the portfolio is organized without an extra click. Everything on the homepage is there to help the reader orient themselves faster. Anything that only served my own self-expression was left out.
 
 ---
 
-### Decision 2: One Intentional Customization — Color Scheme
+### Decision 2: One Intentional Customization
 
-**What was changed:** The primary theme color was changed from `green` (the template default) to `indigo`.
+**What changed:** The primary theme color was changed from `green` to `indigo` in `mkdocs.yml`.
 
-**What requirement this change better satisfies:** Typographic contrast ratio and visual association with the portfolio's subject domain. The Material for MkDocs theme uses the primary color for the top navigation bar, sidebar highlights, and hyperlink accents. The default `green` (`#4CAF50`) achieves a WCAG AA contrast ratio of approximately 3.1:1 against white body text backgrounds, which is below the 4.5:1 threshold recommended for text-adjacent UI elements. `Indigo` (`#3F51B5`) achieves approximately 5.9:1 against the same white background, improving legibility for readers scanning navigation elements in peripheral vision. Additionally, indigo is the standard color associated with aerospace engineering and navigation instrumentation (artificial horizon indicators, avionics HUD symbology), which aligns the visual identity of this portfolio with the aerospace concentration that defines my engineering trajectory.
+**What requirement this better satisfies:** The Material for MkDocs theme uses the primary color for the top navigation bar, sidebar highlights, and link accents. The default green (#4CAF50) has a WCAG contrast ratio of roughly 3.1:1 against white backgrounds, which falls below the 4.5:1 recommendation for text-adjacent UI elements. Indigo (#3F51B5) hits about 5.9:1 against white, which makes navigation elements easier to distinguish from body text at a glance. On top of that, indigo aligns with the aerospace domain (think avionics displays and artificial horizon indicators), which fits the focus of my work better than a generic green.
 
-**Why the template default did not meet this requirement:** The default green met no functional requirement specific to this portfolio's content domain and provided a lower contrast ratio against the white content background, reducing the speed at which a reader can distinguish navigational elements from body content.
+**Why the default did not meet the requirement:** Green provided lower contrast for navigation scanning and had no functional connection to the content domain of this portfolio.
 
 ---
 
 ### Decision 3: Documentation Standard
 
-Every assignment entry in this portfolio will identify the governing equation or physical model, define all variables with units, present at least one alternative considered with a stated basis for rejection, and justify the selected approach with a quantitative or functional rationale traceable to a requirement — documented to the standard that a mechanical engineer unfamiliar with the project could reproduce the analysis and arrive at the same conclusion without asking a clarifying question.
+Every entry in this portfolio will state the governing equation or model, define all variables with units, present at least one alternative that was considered, and justify the final selection with a rationale tied to a stated requirement, all documented so that another engineer could reproduce the analysis without asking me a question.
 
 ---
 
@@ -32,192 +32,167 @@ Every assignment entry in this portfolio will identify the governing equation or
 
 ---
 
-### Task A: Portfolio Analysis (25%)
+### Task A: Portfolio Analysis
 
-Two engineering portfolios were identified and evaluated against four functional requirements: navigability, reproducibility, evidence of reasoning, and professional tone. The prohibited terms (*good, bad, nice, clear, professional*) are used below only with explicit qualification.
+Two engineering portfolios were found and evaluated against four criteria: navigability, reproducibility, evidence of reasoning, and professional tone.
 
 ---
 
-#### Portfolio 1: Rick Meade — Mechanical & Robotics Engineering
+#### Portfolio 1: Rick Meade (GitHub Pages)
 
 **URL:** [https://rjmeade.github.io/](https://rjmeade.github.io/)
-**Hosting platform:** GitHub Pages (static site deployment)
 
-**a. Navigability**
-The site uses a single-page indexed layout with distinct project cards organized by engineering discipline (aerospace systems, robotics, computer vision, optimization). A reader arriving at the landing page can identify the title and discipline of any individual project within approximately 15 seconds by scanning the card grid, well below the 60-second threshold. The flat architecture eliminates multi-tier menu traversal — every project is one click from the homepage. This structure prioritizes speed-to-artifact for a reader who already knows what discipline they are looking for.
+**a. Navigability:** The site is a single-page layout with project cards sorted by discipline (aerospace, robotics, optimization). Every project is one click from the landing page. A visitor scanning for a specific project can find it in about 15 seconds without digging through nested menus, well under the 60-second threshold.
 
-**b. Reproducibility**
-In the Complete Coverage Path Planning project, analytical formulations for concave domain decomposition are defined with geometric boundary conditions. In the autonomous fixed-wing aircraft project, topology optimization objectives (minimizing structural compliance subject to volume fraction constraints) are outlined alongside finite element parameters. However, the portfolio does not host parametric CAD files (`.sldprt`, `.step`), finite element mesh configurations, or dimensioned fabrication drawings. A peer engineer could replicate the algorithmic logic and conceptual topology, but would need to reconstruct discrete geometric dimensions and tolerance stack-ups from scratch. Reproducibility is therefore partial: the reasoning is recoverable, but the manufacturing-level implementation is not.
+**b. Reproducibility:** Some projects include analytical formulations and optimization parameters. The path planning project defines geometric boundary conditions, and the aircraft project outlines topology optimization objectives (minimizing compliance under volume fraction constraints). That said, there are no downloadable CAD files, mesh configs, or dimensioned drawings. A reader could follow the reasoning, but they would have to rebuild the geometry from scratch. Reproducibility covers the logic but not the fabrication.
 
-**c. Evidence of Reasoning**
-This portfolio documents the *iteration pipeline* rather than presenting static end-state CAD models. In the aircraft structural design, material allocation was driven by stress-tensor distribution under maximum aerodynamic gust loading rather than intuitive geometric placement. In the UGV chassis design, structural decisions were governed by dynamic impact deceleration ($F = m \cdot \frac{dv}{dt}$) and payload mass budget constraints. The documentation presents the physics, boundary conditions, and optimization algorithms that dictated design decisions — the reader sees *why* a cross-section was chosen, not just *what* the final geometry looks like.
+**c. Evidence of reasoning:** This is where the portfolio stands out. Instead of just showing finished CAD models, it walks through the iteration process. The aircraft structure was shaped by stress distributions under gust loading, not by guessing at shapes. The UGV chassis design traces back to impact deceleration equations and mass budgets. You can see why each design looks the way it does.
 
-**d. Professional Tone**
-The language relies on domain-specific engineering terminology (*topology optimization*, *convex cellular decomposition*, *impact attenuation*) without informal hyperbole. Claims reference quantifiable context — project scale, engineering role (Chief Engineer), and award recognition (Dean's Choice Award). The tone is suitable for a document submitted to an employer to the extent that every assertion is backed by a technical context rather than a subjective adjective.
+**d. Professional tone:** The writing uses domain-specific terms (topology optimization, convex cellular decomposition, impact attenuation) without filler or hype. Claims are supported by context like project scope and engineering roles. It reads like something you could hand to an employer without editing.
 
 ---
 
-#### Portfolio 2: Julian Zachar-Fink — Mechanical & Manufacturing Engineering
+#### Portfolio 2: Julian Zachar-Fink (Custom Domain)
 
 **URL:** [https://julianzacharfink.com/](https://julianzacharfink.com/)
-**Hosting platform:** Independent web hosting (custom domain)
 
-**a. Navigability**
-The portfolio is structured chronologically by academic semester, with each project accessible from a global gallery page. Sub-headers within each project follow a consistent sequence: Problem Definition → Technical Specifications → Kinematic/Structural Calculations → CAD & Manufacturing → Experimental Validation. A reader can navigate from the homepage to a specific calculation or bill of materials within approximately 20 seconds. The consistent internal structure means that once a reader understands one project page, they can predict the location of equivalent content in every other project — this predictability is itself a navigability feature.
+**a. Navigability:** Projects are organized by semester with a consistent internal structure: Problem Definition, Technical Specs, Calculations, CAD/Manufacturing, and Validation. Once you learn the layout of one project page, you can predict where to find the same content in every other project. Time to locate a specific calculation or BOM is about 20 seconds.
 
-**b. Reproducibility**
-This portfolio achieves a higher reproducibility standard than Portfolio 1. In the TRAS Residential Plastic Compactor project, the documentation specifies the 3:1 volumetric compaction ratio, lead screw torque requirements ($\tau = \frac{F \cdot d_m}{2} \cdot \frac{\pi f d_m + L}{\pi d_m - f L}$), gear reduction ratios, and a line-item bill of materials establishing a unit manufacturing cost of 822 DKK against a retail ceiling of 4,500 DKK. The presence of kinetic formulas, electrical power ratings, cost breakdown tables, and linkage kinematic sketches provides sufficient data for an engineering team to construct an equivalent functional prototype without contacting the author.
+**b. Reproducibility:** This portfolio sets a higher bar. The plastic compactor project includes a 3:1 compaction ratio, lead screw torque calculations, gear ratios, and a full bill of materials with unit costs (822 DKK against a 4,500 DKK retail target). Between the kinematic sketches, power ratings, and cost tables, a team could build a working prototype from this documentation alone.
 
-**c. Evidence of Reasoning**
-Design decisions are consistently linked to quantitative requirements or physical constraints rather than presented as final selections without justification. In the plastic sorting system (G.O.O.N.E.R.), the author documents why standard near-infrared (NIR) reflection failed on carbon-black polymers due to total spectral absorption, justifying the selection of hyperspectral short-wave infrared spectroscopy as the alternative. Motor torque versus lead screw pitch was balanced against consumer duty-cycle constraints and acoustic noise thresholds. Formal Pugh concept screening matrices and failure mode evaluations are documented, meaning the reader can trace any final design back through the selection methodology that produced it.
+**c. Evidence of reasoning:** Every design choice traces back to a constraint or trade study. The sorting system project explains why standard NIR sensing failed on carbon-black plastics (total absorption), which justified switching to short-wave infrared spectroscopy. Motor selection was balanced against duty cycle limits and noise. Pugh matrices and failure mode analyses are included, so you can follow the full decision chain from requirements to final design.
 
-**d. Professional Tone**
-The writing follows European/ISO engineering report conventions with precise mechanical terminology (*kinematic synthesis*, *volumetric strain*, *transmission efficiency*, *Design for Manufacturing and Assembly*). The tone is dispassionate and specification-driven — measurable tolerances, financial constraints, and functional performance targets replace subjective assessments. This is professional in the specific sense that it meets the documentation standard expected by a European manufacturing engineering employer reviewing a candidate's design capability.
+**d. Professional tone:** Written in a formal European engineering report style with precise terminology (kinematic synthesis, transmission efficiency, DFMA). The language is focused on specs, tolerances, and constraints rather than opinions.
 
 ---
 
-#### Comparative Summary
+#### Summary
 
 | Criterion | Portfolio 1 (Meade) | Portfolio 2 (Zachar-Fink) |
 |---|---|---|
-| **Navigability** | Single-page card grid; ~15 s to target | Semester taxonomy; ~20 s to target |
-| **Reproducibility** | Algorithmic logic recoverable; fabrication data absent | Sufficient for prototype reconstruction |
-| **Evidence of Reasoning** | Optimization-driven; physics traced to design | Pugh matrices; failure mode analysis documented |
-| **Professional Tone** | Aerospace/robotics vocabulary; objective | ISO-standard engineering report format |
+| **Navigability** | Single-page cards, ~15 s | Semester layout, ~20 s |
+| **Reproducibility** | Logic recoverable, no fab data | Enough to build a prototype |
+| **Reasoning** | Optimization-driven iteration | Pugh matrices, failure modes |
+| **Tone** | Aerospace vocabulary, objective | ISO-style report format |
 
-Portfolio 2 (Zachar-Fink) sets a higher standard for reproducibility and decision traceability because it includes quantified trade studies and manufacturing cost data. Portfolio 1 (Meade) excels in navigability due to its flat single-page architecture. Both portfolios demonstrate that the value of an engineering portfolio is not in the final geometry shown, but in the documented reasoning that produced it.
-
----
-
-### Task B: Product Analysis — Binder Clip (25%)
+Portfolio 2 scores higher on reproducibility because it includes manufacturing costs and component-level specs. Portfolio 1 is faster to navigate due to its flat layout. Both demonstrate that the value of a portfolio is in the reasoning behind the design, not just the final result.
 
 ---
 
-#### a. Primary Engineering Function
+### Task B: Product Analysis (Binder Clip)
 
-The binder clip performs the following mechanical function: it exerts a reversible, compressive normal clamping force across a planar stack of flexible sheet media via elastic flexural deflection of a sheet-metal spring body, generating static frictional resistance sufficient to prevent relative shear displacement and separation of the sheets without inducing plastic deformation or surface perforation of the substrate.
+---
 
-This is not "holding papers together" — that is a consumer description. The engineering function is: *convert stored elastic strain energy in a preloaded flexure spring into a sustained normal contact force that produces friction-based shear retention of a sheet stack.*
+#### a. Primary Function
+
+The binder clip converts stored elastic strain energy in a preloaded flexure spring into a sustained normal contact force that produces friction-based shear retention of a sheet stack. In simpler terms, it squeezes paper together hard enough that friction alone keeps the sheets from sliding apart, and it does this without punching holes or permanently deforming the paper.
 
 ---
 
 #### b. Governing Model
 
-The binder clip operates through two coupled mechanical subsystems:
+Two mechanical systems are at work:
 
-**1. Clamping Force (Spring Deflection)**
+**1. Clamping force (spring behavior)**
 
-The triangular spring body functions as a symmetric dual-cantilever flexure spring. From Euler-Bernoulli beam theory:
+The triangular body acts as a symmetric dual-cantilever flexure spring. From beam theory:
 
-$$F_{\text{clamp}} = k \cdot \delta = \frac{E \cdot w \cdot t^3}{4L^3} \cdot (t_{\text{stack}} - g_0)$$
+$$F_{\text{clamp}} = \frac{E \cdot w \cdot t^3}{4L^3} \cdot (t_{\text{stack}} - g_0)$$
 
-where:
-
-| Variable | Description | Unit |
+| Variable | What it is | Unit |
 |---|---|---|
-| $F_{\text{clamp}}$ | Normal compressive clamping force on the paper stack | N |
-| $E$ | Young's modulus of tempered spring steel (~200–210 GPa) | Pa |
-| $w$ | Width of the clip body (extrusion depth) | m |
-| $t$ | Thickness of the spring steel sheet | m |
-| $L$ | Cantilever span from apex to lip (flange length) | m |
-| $t_{\text{stack}}$ | Thickness of the inserted paper stack | m |
-| $g_0$ | Initial resting jaw gap (often ≤ 0 for preloaded clips) | m |
+| $F_{\text{clamp}}$ | Clamping force on the paper | N |
+| $E$ | Young's modulus of spring steel (~200 GPa) | Pa |
+| $w$ | Width of the clip body | m |
+| $t$ | Thickness of the steel sheet | m |
+| $L$ | Length of each side flange (apex to lip) | m |
+| $t_{\text{stack}}$ | Thickness of the paper stack | m |
+| $g_0$ | Resting jaw gap (often zero or negative for preload) | m |
 
-The retention criterion against pull-out is governed by Coulomb friction:
+For the paper to stay put, Coulomb friction must hold: $F_{\text{pull}} \leq 2\mu F_{\text{clamp}}$, where $\mu$ is the static friction coefficient (about 0.4 to 0.5 for steel on paper).
 
-$$F_{\text{pull}} \leq 2\mu F_{\text{clamp}}$$
+**2. Opening mechanics (lever action)**
 
-where $\mu$ is the static coefficient of friction (steel-to-paper ≈ 0.4–0.5; paper-to-paper ≈ 0.6–0.7).
+Each wire handle is a Class 1 lever that pivots against the body:
 
-**2. Opening Mechanics (Lever Actuation)**
+$$MA = \frac{L_{\text{handle}}}{d_{\text{pivot}}} \approx 5\text{ to }10$$
 
-Each wire handle acts as a Class 1 lever pivoting against the body's shoulder:
+This is why you can open a clip that exerts 10+ N of clamping force with just a couple newtons of finger pressure.
 
-$$F_{\text{applied}} \cdot L_{\text{handle}} = F_{\text{spring}} \cdot d_{\text{pivot-to-lip}}$$
-
-Mechanical advantage:
-
-$$MA = \frac{L_{\text{handle}}}{d_{\text{pivot-to-lip}}} \approx 5\text{–}10$$
-
-**One assumption that makes this model valid:** The spring steel operates strictly within its elastic limit ($\sigma_{\text{max}} < \sigma_{\text{yield}}$), meaning Hooke's law applies and the clip returns to its original geometry after each use cycle without permanent plastic set. If the material were loaded beyond its yield strength, the clamping force would degrade with each use cycle and the linear spring constant $k$ would no longer be valid — the clip would take a "set" and stop clamping.
+**Key assumption:** The spring steel stays within its elastic limit ($\sigma_{\text{max}} < \sigma_{\text{yield}}$), so Hooke's law applies and the clip returns to its original shape after every use. If the steel yielded plastically, the clip would take a permanent set and gradually lose clamping force over time.
 
 ---
 
-#### c. Component Photographs and Geometry Analysis
+#### c. Component Photographs
 
-*Note: Photographs must be taken by the student. Replace each placeholder below with your own image.*
+*Replace each placeholder with your own photograph.*
 
-**Component 1: The Clip Body (Triangular Spring Steel Piece)**
+**Component 1: Clip Body (Spring Steel Triangle)**
 
-![Photograph of binder clip body — spring steel triangle](clip_body.jpg)
+![Photograph of binder clip body](clip_body.jpg)
 
-The clip body is stamped and bent from a single strip of high-carbon tempered spring steel into an isosceles triangular prism cross-section. The geometry affects mechanical function in the following ways:
+Stamped and bent from a single strip of high-carbon spring steel into a triangular cross-section.
 
-- **Sheet thickness ($t$):** Clamping stiffness scales with $t^3$ (from $k \propto E w t^3 / 4L^3$). A small increase in material thickness produces a cubic increase in clamping force — this is why binder clips of different sizes use different gauge steel, not just different overall dimensions. Manufacturing tolerances on $t$ directly control force output.
-- **Apex radius of curvature:** The bend at the top of the triangle is radiused rather than sharp-cornered. This distributes bending strain across a smooth arc rather than concentrating it at a single line, which prevents fatigue crack initiation at the highest-stress location in the clip. A sharp fold would create a stress concentration factor exceeding 2.0, dramatically reducing cycle life.
-- **Flange span and angle:** The length of each triangular side ($L$) determines the maximum paper stack depth (throat capacity) and the cantilever moment arm. A longer $L$ reduces clamping force for the same material and deflection (force scales as $1/L^3$), so clip size is a direct trade between stack capacity and retention force.
-- **Rolled beads (curled lips):** The terminal edges of the body are curled outward into cylindrical channels. These serve three simultaneous functions: (1) they form journal bearings that capture the wire handle pivot feet, creating a revolute kinematic pair; (2) they eliminate sharp sheet-metal edges that would score and tear paper sheets under clamping pressure; (3) they increase the second moment of area of the edge cross-section, preventing transverse edge buckling when the clip is opened.
+- **Sheet thickness (t):** Stiffness scales with $t^3$, so even a small change in gauge dramatically changes clamping force. This is why different clip sizes use different steel thicknesses, not just scaled-up geometry.
+- **Apex radius:** The bend at the top is radiused rather than sharp. A sharp fold would create a stress concentration that accelerates fatigue cracking at the highest-stress point in the clip. The radius spreads the strain over a wider arc.
+- **Flange length (L):** Determines throat depth (how much paper fits) but also sets the moment arm. Longer flanges mean lower force for the same deflection since $F \propto 1/L^3$.
+- **Curled lips:** The edges roll outward into cylindrical channels. These do three things at once: they act as journal bearings for the wire handle pivots, they prevent sharp steel edges from cutting paper, and they stiffen the edge against buckling when the clip is opened wide.
 
 **Component 2: Wire Handle (Left)**
 
-![Photograph of binder clip wire handle](handle_left.jpg)
+![Photograph of left wire handle](handle_left.jpg)
 
-Each handle is a single piece of high-tensile nickel-plated steel wire bent into a trapezoidal loop with two inward-pointing coaxial cylindrical feet at the proximal ends.
+A single piece of nickel-plated steel wire bent into a loop with inward-pointing cylindrical feet.
 
-- **Lever arm length ($L_{\text{handle}}$):** The handle length provides a mechanical advantage of approximately 5:1 to 10:1, meaning a user applying 2 N of finger force can overcome 10–20 N of spring reaction force. Without this mechanical advantage, the clip would require pliers to open.
-- **Wire diameter ($d$):** The second moment of area of the wire ($I = \frac{\pi d^4}{64}$) must be high enough that the handle does not deflect appreciably during squeezing — any handle bending represents lost input stroke that does not translate into jaw opening. The wire diameter is therefore sized for stiffness, not strength.
-- **Pivot feet geometry:** The inward-facing cylindrical tips function as journal pins inside the body's rolled beads, creating a single degree-of-freedom revolute joint. The wire can rotate approximately 270° around this axis, allowing the handle to fold flat against the paper stack or be removed entirely by compressing the feet together.
+- **Lever length:** Provides the 5:1 to 10:1 mechanical advantage that makes the clip openable by hand. Without the handles, you would need pliers.
+- **Wire diameter:** Sized for stiffness, not strength. Any bending in the handle during squeezing is wasted motion that does not translate into jaw opening.
+- **Pivot feet:** The inward tips sit inside the body's curled lips, forming a simple hinge. They can rotate about 270 degrees (fold flat) or be removed entirely by squeezing the feet together.
 
 **Component 3: Wire Handle (Right)**
 
-![Photograph of binder clip wire handle — right](handle_right.jpg)
+![Photograph of right wire handle](handle_right.jpg)
 
-Identical in geometry and function to the left handle. The symmetric pair ensures that the opening force is applied as a balanced couple about the clip body's longitudinal axis, preventing asymmetric jaw opening that would cause one lip to release before the other. If only a single lever were provided, the clip would twist during opening, producing non-uniform clamping pressure across the clip width.
+Identical to the left handle. Having two symmetric handles means the opening force acts as a balanced couple, so both jaws open evenly. A single handle would twist the clip and release one side before the other.
 
 ---
 
-#### d. Patent Research and Design Decision Analysis
+#### d. Patent Research
 
-**Patent identification:**
+**Patent:** US 1,139,627, "Paper-binding clip"
+**Inventor:** Louis E. Baltzley (Washington, D.C.)
+**Filed:** July 2, 1910 | **Granted:** May 18, 1915
 
-- **Patent number:** US 1,139,627
-- **Title:** *Paper-binding clip*
-- **Inventor:** Louis E. Baltzley (Washington, D.C.)
-- **Filed:** July 2, 1910
-- **Granted:** May 18, 1915
-- **Context:** Baltzley invented the clip to help his father, Edwin Baltzley (a prolific inventor and writer), organize and bind manuscript pages without punching holes or sewing them together.
+Baltzley invented the clip to help his father, a writer, organize manuscript pages without punching holes or sewing them together. A later improvement patent (US 1,865,453, granted 1932) added segmented jaws for uneven stacks.
 
-A subsequent improvement patent, **US 1,865,453** (*Binder clip*, filed March 17, 1930, granted July 5, 1932), also by Baltzley, added articulated/segmented gripping jaws to accommodate non-uniform stack thicknesses.
+**Two alternative solutions for the same function:**
 
-**Alternative solutions that solve the same primary function (compressive retention of a sheet stack):**
+1. **Gem paper clip:** A single formed wire loop that uses torsional/flexural deflection to grip a small stack. Much cheaper and simpler, but limited to about 10-20 sheets and easily bent out of shape permanently.
 
-1. **Gem paper clip (wire loop clip):** A single continuous formed wire with nested concentric loops utilizing combined torsional and flexural elastic deformation to clamp a small bundle. Trade-off: zero assembly cost and single-piece construction, but significantly lower clamping force, limited to approximately 10–20 sheets, and easily undergoes permanent plastic yielding under overloading.
+2. **Bulldog clip:** Two stamped jaw halves joined by a pivot pin with a separate torsion spring. Stronger grip and wider opening, but more parts (3-4 components), higher cost, and the rigid handles cannot fold flat.
 
-2. **Bulldog clip (pivot-jaw clip):** Two stamped sheet-metal jaw halves joined by a central pivot pin and energized by a separate helical torsion spring or coiled steel band. Trade-off: higher clamping force and wider jaw opening capacity, but higher part count (3–4 components: two jaws, one spring, one pivot pin), higher assembly cost, and rigid handles that cannot fold flat for filing.
+**One design decision:**
 
-**One design decision and its rationale:**
+The most visible design choice is the fold-back removable handle. Baltzley could have used fixed handles (like the bulldog clip) or built the lever into the spring body itself (like a clothespin). Instead, he made handles that fold 180 degrees flat and can be fully removed.
 
-The most consequential visible design decision in US 1,139,627 is the **fold-back, removable dual-position wire handle mechanism**. Baltzley could have used fixed rigid levers (as in the bulldog clip) or integrated the lever arm into the spring body itself (as in a clothespin). Instead, he designed handles that rotate 180° to fold flat against the document stack and can be entirely removed by compressing the wire feet together.
+Why this makes sense:
 
-This decision solves three engineering problems simultaneously:
-
-1. **Volume efficiency:** Fixed handles (like those on a bulldog clip) create rigid protrusions that prevent clamped documents from lying flat in a drawer or box. Folding the handles reduces the clip's vertical profile to the sheet-metal body thickness alone, eliminating stacking interference.
-2. **Inadvertent release prevention:** The long lever arm required during application to provide mechanical advantage becomes a liability once the clip is applied — any accidental squeeze or snag would re-open the jaws. Folding the handles flat removes the moment arm, making accidental release mechanically impossible without deliberately re-deploying a handle.
-3. **Tamper-resistant binding mode:** Removing both handles entirely converts the clip into a low-profile, semi-permanent binding spine that cannot be opened without a tool or replacement handle — this is a functional mode not available in any competing clip design of the era.
+1. **Stacking:** Fixed handles stick out and prevent clipped documents from lying flat in a drawer. Folded handles reduce the profile to just the steel body thickness.
+2. **Accidental release:** Once applied, the long lever arm that helped you open the clip becomes a liability because any bump could squeeze it open. Folding the handles removes the moment arm, making accidental opening nearly impossible.
+3. **Semi-permanent mode:** Removing both handles entirely turns the clip into a low-profile binding that cannot be opened without a tool, which no competing clip design offered at the time.
 
 ---
 
 ## Part 3: Communicate
 
-*The About Me section for this assignment is located on the [homepage](../../../index.md) of this portfolio, as specified by the assignment instructions. It is not duplicated here to maintain a single source of truth.*
+The About Me section is on the [homepage](../../../index.md) as required by the assignment instructions.
 
 ### Time Spent
 
-<!-- PLACEHOLDER: Replace with your actual time -->
-I spent approximately **[X]** hours on this assignment. The time was distributed approximately as follows:
+<!-- Replace the [X] values with your actual hours -->
+I spent approximately **[X]** hours on this assignment, broken down roughly as:
 
 - Portfolio research and analysis (Task A): ~[X] hours
-- Product analysis, patent research, and component documentation (Task B): ~[X] hours
+- Product research, patent lookup, and component write-up (Task B): ~[X] hours
 - Part 2 decisions and site customization: ~[X] hours
-- About Me professional introduction (Part 3): ~[X] hours
-- MkDocs setup, deployment, and formatting: ~[X] hours
+- About Me section (Part 3): ~[X] hours
+- MkDocs setup and formatting: ~[X] hours

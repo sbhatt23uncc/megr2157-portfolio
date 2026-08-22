@@ -1,8 +1,8 @@
-# Rick Bhattacharya — MEGR 2157 Design Portfolio
+# Rick Bhattacharya, MEGR 2157 Design Portfolio
 
 ![MEGR 2156-7 Title](MEGR2156title.png)
 
-This site is the working record of my engineering design decisions across MEGR 2157. Every entry follows the **Analyze, Decide, Communicate** framework so that a reader can see not just what was built, but how and why it was built that way. The navigation on the left provides direct access to each assignment. The grading standard for every entry is the same: a mechanical engineer unfamiliar with the project should be able to reproduce the analysis and arrive at the same conclusion without asking a clarifying question.
+This site is the working record of my engineering design decisions across MEGR 2157. Every entry follows the Analyze, Decide, Communicate framework so a reader can see not just what was built, but how and why. The navigation on the left links to each assignment directly.
 
 > **Engineering is the art of making decisions you can defend.**
 
@@ -10,34 +10,34 @@ This site is the working record of my engineering design decisions across MEGR 2
 
 Every assignment page is organized around:
 
-- **Analyze** — Identify the governing model, state its assumptions, and apply it correctly to the problem.
-- **Decide** — Make a choice between alternatives, document the criteria, and justify the selection.
-- **Communicate** — Present the reasoning so that a colleague can reproduce the work without asking a single question.
+- **Analyze**: Identify the governing model, state its assumptions, and apply it to the problem.
+- **Decide**: Choose between alternatives, document the criteria, and justify the selection.
+- **Communicate**: Present the reasoning so a colleague could reproduce the work without asking a question.
 
 ## Semester Arc
 
-- **Act I (Weeks 1–7):** Building vocabulary through the bracket sequence.
-- **Act II (Weeks 8–11):** Surveying the machine-element landscape and formally comparing options.
-- **Act III (Weeks 12–15):** Building the complete lead screw translating system.
+- **Act I (Weeks 1-7):** Building vocabulary through the bracket sequence.
+- **Act II (Weeks 8-11):** Surveying the machine-element landscape and comparing options.
+- **Act III (Weeks 12-15):** Building the complete lead screw translating system.
 
-By A11, every design decision defended in this portfolio should trace back to something analyzed and communicated earlier in this site.
+By A11, every design decision should trace back to something analyzed and communicated earlier in this site.
 
 ---
 
 ## About Me
 
-My name is Rick Bhattacharya. I am a second-year mechanical engineering student at the University of North Carolina at Charlotte, pursuing the aerospace concentration. My path to mechanical engineering was not chosen by elimination — it was driven by a sustained, specific interest in propulsion systems and flight vehicle design that preceded any formal coursework.
+My name is Rick Bhattacharya. I am a second-year mechanical engineering student at UNC Charlotte, pursuing the aerospace concentration. I chose mechanical engineering because of a long-standing interest in aerospace systems, specifically propulsion and flight vehicles. That interest was not something I picked up in a classroom. It started with building rockets and has shaped every project I have taken on since.
 
-At UNC Charlotte, I serve as the President and Lead Engineer of the Combustion and Propulsion Laboratory (CAPL), a student organization I co-founded to design, manufacture, and hot-fire a liquid bipropellant rocket engine entirely from scratch. This project spans thermodynamic cycle analysis, injector geometry design, combustion chamber thermal management, and test stand instrumentation — every subsystem demands the integration of fluid mechanics, heat transfer, materials science, and structural analysis into a single functioning assembly. I also serve as Outreach Manager for the Charlotte Rocketry Club, where I coordinate public engagement and mentor newer members pursuing high-power rocketry certification.
+At UNC Charlotte, I am the President and Lead Engineer of the Combustion and Propulsion Laboratory (CAPL), a club I helped start with the goal of designing, building, and test-firing a liquid rocket engine from scratch. The project covers everything from thermodynamic cycle analysis and injector geometry to combustion chamber cooling and test stand instrumentation. Each subsystem pulls from a different area of mechanical engineering (fluids, heat transfer, materials, structures), and getting them to work together as one system is the real challenge. I am also the Outreach Manager for the Charlotte Rocketry Club, where I help coordinate events and mentor members working toward high-power rocketry certification.
 
-My project experience spans multiple domains of mechanical and aerospace systems. I have designed and competed with autonomous robots in VEX Robotics competitions, built and flown high-power rockets for Level 1 and Level 2 certification flights, developed thrust vector control systems for guided rocket flight, and designed custom flight computers to record acceleration, altitude, and orientation data during powered ascent. I am currently applying topological optimization methods to the structural design of an unmanned aerial vehicle, using finite element analysis to minimize structural mass while satisfying aerodynamic load and stiffness constraints.
+Outside of those organizations, I have built and competed with robots in VEX competitions, flown high-power rockets for Level 1 and Level 2 certification, developed thrust vector control systems for guided rocket flight, and designed custom flight computers to log acceleration, altitude, and orientation data during flights. Right now, I am working on a topological optimization project to design a UAV airframe, using finite element analysis to minimize weight while meeting aerodynamic load requirements.
 
-The kind of engineer I am becoming is one who designs propulsion and flight systems — not by intuition, but by analysis. Every system I build starts with a governing equation, proceeds through a design trade study, and ends with a test that either validates or falsifies the model. That cycle — model, build, test, revise — is the engineering method, and it is the standard I intend to hold myself to throughout this portfolio and this career.
+The common thread across all of this is propulsion and flight. I want to design systems that fly, and I want to design them based on analysis and testing rather than guesswork.
 
 ### Defending an Engineering Decision
 
-What does it mean to defend an engineering decision — and do I currently know how to do it?
+What does it mean to defend an engineering decision, and do I currently know how to do it?
 
-Defending an engineering decision means demonstrating that a design choice was not arbitrary — that it was selected from a defined set of alternatives, evaluated against quantifiable criteria derived from functional requirements, and that the chosen option satisfies those criteria more effectively than the rejected alternatives within stated constraints. A defended decision has three components: the requirement it traces to, the alternatives it was evaluated against, and the evidence — analytical, experimental, or both — that supports the selection over those alternatives.
+To me, defending an engineering decision means showing that a choice was not arbitrary. It means you had alternatives, you had criteria for comparing them, and you can point to evidence (analytical, experimental, or both) that supports the option you picked over the ones you did not. A defended decision answers three questions: what requirement does it satisfy, what else was considered, and why was this one better?
 
-Do I currently know how to do this rigorously? Partially. In my propulsion work with CAPL, I have made design selections — injector pattern, chamber pressure, propellant combination — based on published performance data, thermodynamic models, and manufacturing constraints. I can articulate why I chose a pintle injector over a showerhead configuration based on combustion stability margins and machining complexity. But I also recognize that many of my earlier design choices, particularly in my first rocketry projects, were made from experience and intuition rather than from a documented trade study with traceable criteria. I could defend those decisions in conversation, but I could not hand someone a written document that would allow them to reproduce my reasoning without asking me a question. That gap — between knowing why I made a choice and documenting that reasoning to a reproducible standard — is precisely what I expect this course to close.
+Can I do this right now? In some cases, yes. In my propulsion work with CAPL, I have made real design choices (injector type, chamber pressure, propellant pairing) based on published data and thermodynamic models. I can explain why we went with a pintle injector instead of a showerhead design based on combustion stability and how hard each one is to machine. But I also know that a lot of my earlier projects, especially the first rockets I built, were designed more on instinct and experience than on a formal trade study. I could explain those decisions out loud, but if I handed someone my notes, they would probably still have questions. Closing that gap between verbal reasoning and written documentation that stands on its own is what I expect to get out of this course.
