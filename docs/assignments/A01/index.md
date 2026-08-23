@@ -32,6 +32,8 @@ To build a professional engineering portfolio using MkDocs on GitHub Pages, anal
 
 **Product:** Binder Clip
 
+![Photograph of a fully assembled binder clip](full_assembly.jpg)
+
 **Patent:** [US 1,139,627](https://patents.google.com/patent/US1139627A/en) - "Paper-binding clip"
 **Inventor:** Louis E. Baltzley (Washington, D.C.)
 **Filed:** July 2, 1910 | **Granted:** May 18, 1915
