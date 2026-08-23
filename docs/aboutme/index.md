@@ -18,4 +18,4 @@ Can I do this right now? In some cases, yes. In my propulsion work with CAPL, I 
 
 ## Time Spent
 
-I spent approximately **[X]** hours on this assignment.
+I spent approximately **4 hours** on this assignment. Most of that time went toward figuring out how to set up the portfolio and get it deployed, troubleshooting issues with GitHub Pages and the MkDocs build process, and researching the portfolios and binder clip patent for Part 1.
