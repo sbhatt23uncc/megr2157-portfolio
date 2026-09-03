@@ -138,6 +138,12 @@ To double-check my hand calculations, I jumped into SolidWorks and built a 3D mo
 * **Calculated 1D Theoretical Mass:** 15.8 kg
 * **Verified 3D CAD Mass:** 14.41 kg
 
+**CAD Files for Review:**
+
+* [Download Truss CAD Model (truss.SLDPRT)](cad/truss.SLDPRT)
+* [Download Pin CAD Model (pin.SLDPRT)](cad/pin.SLDPRT)
+* [Download Pin Engineering Drawing (pin drawing.JPG)](cad/pin%20drawing.JPG)
+
 ---
 
 ## 6. Lessons Learned & Mistakes Log
