@@ -3,14 +3,14 @@
 ## 1. Primary Objective & Truss Design Concept
 
 **Primary Objective:**
-The main goal for this project was to design a lightweight planar truss out of A500 steel that could handle two opposing 20 kN point loads (one pushing up at C, and one pulling down at D). We had to make sure it satisfied the specific spatial constraints defined in the assignment prompt (a = 0.4 m, b = 0.3 m).
+The main goal of this project was designing a lightweight planar truss using A500 steel. It had to safely handle two opposing 20 kN point loads (one pushing up at C and one pulling down at D) while fitting within the strict a = 0.4 m and b = 0.3 m spatial constraints from the assignment prompt.
 
 ![Original Problem Constraints](images/media_1788402874737.png)
 
 **Thinking Process & Geometry Layout:**
-To get started, I mapped out the required nodes from the prompt: A for the pin, B for the roller, and C and D for the loads. I wanted to keep the design as simple and light as possible, so I checked the static determinacy equation (m + r = 2j). Since we had 4 joints (j=4) and 3 reaction forces (r=3), I knew I needed exactly 5 members (m=5) to keep it rigid without over-complicating things. 
+I started out by mapping the required nodes: A for the pin, B for the roller, and C and D for the loads. My priority was keeping the frame as simple as possible to save on weight. I checked the static determinacy equation (m + r = 2j) to figure out the minimum number of members I could get away with. With 4 joints (j=4) and 3 reaction forces (r=3), I needed exactly 5 members (m=5) to maintain rigidity.
 
-I decided to connect the outer perimeter (AB, BC, CD, AD) and just run a single internal diagonal member (AC) to keep the frame from collapsing. This setup kept the weight down but still fully supported that heavy twisting moment caused by the loads at C and D.
+I connected the outer perimeter (AB, BC, CD, AD) and ran a single internal diagonal member (AC) so the frame wouldn't collapse. This layout minimized weight while fully supporting the twisting moment caused by the C and D loads.
 
 ![Overall Truss Design](images/media_1788400563701.jpg)
 
@@ -18,7 +18,7 @@ I decided to connect the outer perimeter (AB, BC, CD, AD) and just run a single 
 
 ## 2. Static Analysis & Internal Forces (Phase 1)
 
-Before I could size any of the steel members, I needed to figure out exactly how much force was running through the truss. I started by finding the global reactions using basic static equilibrium equations, and then worked through the Method of Joints to find the tension and compression in every single piece. It turned out that the diagonal member AC was taking the biggest hit—so that compressive force became the driving factor for the rest of my design.
+I needed to figure out exactly how much force was running through the truss before sizing the steel members. I found the global reactions using basic static equilibrium equations. From there I worked through the Method of Joints to solve for the tension and compression in every single piece. The diagonal member AC ended up taking the most force, making it the driving factor for the rest of my design.
 
 ![Global Reactions and Joint B](images/media_1788400563705.jpg)
 
@@ -36,7 +36,7 @@ Before I could size any of the steel members, I needed to figure out exactly how
 
 ## 3. Truss Structure Sizing (Phase 2)
 
-Once I knew the maximum internal force, I could finally size the A500 steel members so they wouldn't fail under the load. The assignment required a safety factor of 3.5, so I divided the steel's yield strength by that factor to find my minimum cross-sectional area. From there, it was pretty straightforward to estimate the total weight of the truss—I just took that required area and multiplied it by the total centerline length of all five members combined.
+Knowing the maximum internal force allowed me to size the A500 steel members so they wouldn't fail under the load. The assignment required a safety factor of 3.5. I divided the steel's yield strength by that factor to find the absolute minimum cross-sectional area required. Estimating the total weight of the truss was pretty straightforward after that since I just multiplied the required area by the combined centerline length of all five members.
 
 **Knowns:**
 
@@ -53,16 +53,28 @@ Once I knew the maximum internal force, I could finally size the A500 steel memb
 
 ![Truss Member Sizing Calculations](images/media_1788400563738.jpg)
 
-**Results:**
+**Results & Derivations:**
 
-* **Minimum Area (A):** 0.0005829 m^2 (or 582.9 mm^2)
-* **Approximate Mass:** 15.8 kg
+**Step 1: Calculate Minimum Cross-Sectional Area**
+The area is calculated using the maximum internal force (37,970 N), the safety factor (3.5), and the yield strength (228 x 10^6 N/m^2).
+
+Symbolic Equation: A = (F_max * SF) / sigma_y
+Numerical Solution: A = (37,970 N * 3.5) / (228 x 10^6 N/m^2)
+A = 0.0005829 m^2 (or 582.9 mm^2)
+
+**Step 2: Calculate Approximate Mass**
+First, find the total volume by multiplying the area by the total length of all members, then multiply by density.
+
+Volume = A * L_tot
+Volume = 0.0005829 m^2 * 3.454 m = 0.002013 m^3
+Mass = Volume * rho
+Mass = 0.002013 m^3 * 7800 kg/m^3 = 15.8 kg
 
 ---
 
 ## 4. Connecting Pin Sizing (Phase 3)
 
-For the joints, I used hardened tool steel pins to make sure they could handle the shear forces without snapping. I assumed a basic single-shear connection and applied a safety factor of 4 against the maximum internal force to find the required pin area. After doing the math to get the diameter, I figured out the total pin weight by assuming the wall bracket would be the exact same thickness as the truss members.
+I went with hardened tool steel for the joint pins to ensure they could handle the shear forces without snapping. I assumed a standard single-shear connection and applied a safety factor of 4 against the maximum internal force to find the minimum pin area. After calculating the diameter, I found the total pin weight by assuming the wall bracket would match the exact thickness of the truss members.
 
 **Knowns:**
 
@@ -130,7 +142,7 @@ To double-check my hand calculations, I jumped into SolidWorks and built a 3D mo
 
 ## 6. Lessons Learned & Mistakes Log
 
-This assignment really opened my eyes to how a single bad assumption can throw off an entire engineering design. Early on, I accidentally assumed the 20 kN load at node C was pointing down instead of up; fixing that one flipped arrow completely changed how the internal forces were distributed across the whole truss. I also learned a lot about the difference between theoretical math and physical reality. My hand-calculated mass (15.8 kg) came out noticeably heavier than the CAD mass (14.41 kg) because the 1D math double-counts the steel where the beams overlap at the joints, while the 3D CAD model actually merges those volumes together.
+This assignment really showed me how a single bad assumption can derail an entire engineering design. Early on I accidentally assumed the 20 kN load at node C was pointing down instead of up. Fixing that one flipped arrow completely changed the way internal forces were distributed across the truss. I also learned a lot about the gap between theoretical math and physical reality. My hand-calculated mass (15.8 kg) came out noticeably heavier than the CAD mass (14.41 kg). The 1D math double-counts the steel where the beams overlap at the joints, whereas the 3D CAD model merges those overlapping volumes together.
 
 ---
 
@@ -138,13 +150,13 @@ This assignment really opened my eyes to how a single bad assumption can throw o
 
 ### Part 1 - Truss Members
 
-* **Expected Failure Mode:** For the truss members, the expected failure mode really just depends on the direction of the load. The tension members (AB, AD, CD) will likely fail via **yielding**, meaning they'll elongate permanently once the normal stress exceeds the 228 MPa limit. On the flip side, the compression members (BC, AC) will fail via **Euler buckling** long before the material reaches its compressive yield limit, simply because long, slender structural elements become geometrically unstable under high compressive loads.
-* **Material Classification:** A500 structural steel is a **ductile** material. This means it will experience significant plastic deformation (stretching or bending) before it actually snaps or fractures.
-* **Support & Reasoning:** In mechanics of materials, tensile stress is uniformly distributed across the cross-section (sigma = F/A), making yielding the primary concern. Compressive stress, however, introduces lateral deflection risks. Compressive stability relies heavily on the area moment of inertia (I), not just the raw cross-sectional area.
-* **Design Modification:** To reduce the likelihood of buckling in the compression members without adding excessive weight, I'd propose changing the cross-sectional geometry from a solid square rod to a hollow square tube. This moves the material further from the neutral axis, massively increasing the area moment of inertia while maintaining the exact same cross-sectional area.
+* **Expected Failure Mode:** The expected failure mode for the truss members really depends on the direction of the load. The tension members (AB, AD, CD) will most likely fail by **yielding**. They will elongate permanently once the normal stress passes the 228 MPa limit. The compression members (BC, AC) face a completely different problem. They will fail via **Euler buckling** long before the material reaches its compressive yield limit. Long and slender structural elements naturally become geometrically unstable under heavy compressive loads.
+* **Material Classification:** A500 structural steel is classified as a **ductile** material, meaning it experiences significant plastic deformation (stretching or bending) before snapping.
+* **Support & Reasoning:** In mechanics of materials we know tensile stress is uniformly distributed across the cross-section (sigma = F/A). This makes yielding the primary concern. Compressive stress introduces lateral deflection risks. Compressive stability relies heavily on the area moment of inertia (I) rather than just the raw cross-sectional area.
+* **Design Modification:** If I wanted to reduce the likelihood of buckling in the compression members without adding too much weight, I would change the cross-sectional geometry from a solid square rod to a hollow square tube. This pushes the material further from the neutral axis and massively increases the area moment of inertia while keeping the cross-sectional area identical.
 
 ### Part 2 - Pin Connections
 
-* **Expected Failure Mode:** The pins are most likely to fail via **transverse shear fracture**. Alternatively, the connection could fail via bearing yielding (where the much harder tool steel pin elongates and crushes the softer A500 steel pinhole).
-* **Support & Reasoning:** According to the Machinery's Handbook (Working Stress section), pins in a single-shear configuration experience the entire 8,536 lbf internal load concentrated entirely across one microscopic slip plane at the interface between the two connected members. Because hardened tool steel is brittle, it won't deform plastically to absorb energy; if the ultimate shear strength is exceeded, it will just snap cleanly at that shear plane.
-* **Design Modification:** The best way to fix this would be to redesign the joint from a single-shear connection to a **double-shear connection**. By placing the truss member inside a clevis bracket or sandwiching it between two welded gusset plates, the shear force is perfectly split across two distinct shear planes on the pin. This immediately halves the applied shear stress (tau = F/2A) without requiring a larger, heavier pin.
+* **Expected Failure Mode:** The pins are most likely to fail through **transverse shear fracture**. A secondary possibility is that the connection could fail via bearing yielding, where the harder tool steel pin crushes the softer A500 steel pinhole.
+* **Support & Reasoning:** The Machinery's Handbook (Working Stress section) notes that pins in a single-shear configuration experience the entire 8,536 lbf internal load concentrated across one microscopic slip plane. Hardened tool steel is brittle and won't deform plastically to absorb energy. If the ultimate shear strength is exceeded, the pin will just snap cleanly right at that shear plane.
+* **Design Modification:** The best way to improve this joint would be redesigning it from a single-shear connection to a **double-shear connection**. Placing the truss member inside a clevis bracket or sandwiching it between two welded gusset plates perfectly splits the shear force across two distinct shear planes on the pin. This immediately cuts the applied shear stress in half (tau = F/2A) without needing a larger or heavier pin.
