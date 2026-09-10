@@ -182,19 +182,41 @@ The estimated peak stress is below the 40 ksi yield strength, but the safety fac
 
 ## Modify Design Parameters
 
-The equation **L = δAE/F** shows the expected trends. Increasing the load decreases the allowable length, while increasing the cross-sectional area increases the allowable length.
+The governing equation is **L = δAE/F**, where A = πD²/4. Before making any changes, I wanted to think through what should happen to the length when I adjust the inputs.
 
-For example, changing the load from 400 lbf to 450 lbf gives:
+**My predictions before calculating:**
 
-**L = (0.009)(0.0490874)(10,000,000)/450 = 9.8175 in**
+* **Increasing the load (F):** I expected the length to **decrease**. A bigger force means more elongation per unit length, so the bar has to be shorter to stay within the 0.009 in deflection limit.
+* **Increasing the diameter (D):** I expected the length to **increase**. A larger cross section is stiffer, so the bar can be longer before it hits the deflection limit.
 
-Changing the circular diameter from 0.250 in to 0.300 in gives:
+**Modified case: F = 450 lbf, D = 0.300 in**
 
-**A = π(0.300)²/4 = 0.0706858 in²**
+I updated both the force and diameter in the SolidWorks global variables to see the combined effect. The parametric equation automatically recalculated the new length.
 
-**L = (0.009)(0.0706858)(10,000,000)/400 = 15.9043 in**
+![Modified SolidWorks equation table showing F = 450 lbf, D = 0.300 in, L = 14.15 in](images/modified-parameters.png)
 
-These values show the expected trends, but screenshots and FEA results for the changed-parameter cases have not yet been added. The instructions also mention changing width, height, and thickness even though the assigned bar has a solid circular cross section. A solid circular bar only has one independent cross-sectional dimension, its diameter, so this part should be clarified with the instructor.
+*Figure 13. Modified global variables. The arrows highlight the changed parameters and the resulting length.*
+
+The new area evaluates to:
+
+**A = π(0.300)²/4 = 0.0707 in²**
+
+And the new length:
+
+**L = (0.009)(0.0707)(10,007,604)/450 = 14.15 in**
+
+This is longer than the baseline of 11.05 in, which confirms my prediction. Even though the force went up (which pushes the length down), the diameter increase had a much bigger effect because area scales with the square of the diameter. The net result is a longer allowable bar.
+
+For comparison, here are the individual effects calculated by hand using E = 10,000,000 psi:
+
+| Case | Change | Area (in²) | Length (in) | Trend |
+| --- | --- | --- | --- | --- |
+| Baseline | F = 400 lbf, D = 0.250 in | 0.04909 | 11.045 | Reference |
+| Load only | F = 450 lbf, D = 0.250 in | 0.04909 | 9.818 | Decreased (as predicted) |
+| Diameter only | D = 0.300 in, F = 400 lbf | 0.07069 | 15.904 | Increased (as predicted) |
+| Combined | F = 450 lbf, D = 0.300 in | 0.07069 | 14.137 | Increased (diameter dominates) |
+
+Since the bar has a solid circular cross section, diameter is the only independent cross-sectional dimension. Width, height, and thickness are not independently adjustable for a circle.
 
 ## Lessons Learned
 
