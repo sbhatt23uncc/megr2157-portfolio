@@ -208,7 +208,7 @@ The total time spent on the assignment was approximately **5 hours**.
 
 ## CAD File
 
-The native SolidWorks `.SLDPRT` file will be added here when available. The assignment requires a working CAD download link.
+[Download A3 SolidWorks Part File (A3.SLDPRT)](cad/A3.SLDPRT)
 
 ## References
 
