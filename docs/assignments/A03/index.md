@@ -207,17 +207,6 @@ And the new length:
 
 This is longer than the baseline of 11.05 in, which confirms my prediction. Even though the force went up (which pushes the length down), the diameter increase had a much bigger effect because area scales with the square of the diameter. The net result is a longer allowable bar.
 
-For comparison, here are the individual effects calculated by hand using E = 10,000,000 psi:
-
-| Case | Change | Area (in²) | Length (in) | Trend |
-| --- | --- | --- | --- | --- |
-| Baseline | F = 400 lbf, D = 0.250 in | 0.04909 | 11.045 | Reference |
-| Load only | F = 450 lbf, D = 0.250 in | 0.04909 | 9.818 | Decreased (as predicted) |
-| Diameter only | D = 0.300 in, F = 400 lbf | 0.07069 | 15.904 | Increased (as predicted) |
-| Combined | F = 450 lbf, D = 0.300 in | 0.07069 | 14.137 | Increased (diameter dominates) |
-
-Since the bar has a solid circular cross section, diameter is the only independent cross-sectional dimension. Width, height, and thickness are not independently adjustable for a circle.
-
 ## Lessons Learned
 
 This assignment helped me understand how load, area, modulus of elasticity, length, and deflection are related. I learned that the 0.009 in value is an allowable input used to calculate the length, while the FEA displacement is a result that must be compared with it.
