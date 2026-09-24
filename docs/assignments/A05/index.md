@@ -6,6 +6,8 @@ Time spent: approximately **5 hours**
 
 [Download the submission PDF](files/A05-submission.pdf)
 
+**Trouble reading the formatting? [View all original handwritten work](files/A05-original-work.pdf)** — full-page calculations and both drawings. The same scans are included at the end of the submission PDF, with a clickable link to them.
+
 <style>
 .a5-figure{margin:1.2rem 0 1.5rem;padding:0;border:0;background:transparent}
 .a5-figure img{display:block;max-width:100%;height:auto;margin:auto}
