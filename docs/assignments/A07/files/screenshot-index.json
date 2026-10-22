@@ -1,0 +1,690 @@
+[
+  {
+    "id": 1,
+    "file": "Aluminum material add.png",
+    "group": "bracket-setup",
+    "asset": "images/01-aluminum-material-add.webp",
+    "caption": "6061-T6 material properties. The library yield strength is 39,885.38 psi.",
+    "figure_number": 1
+  },
+  {
+    "id": 86,
+    "file": "split line.png",
+    "group": "bracket-setup",
+    "asset": "images/86-split-line.webp",
+    "caption": "Split Line face division used to select the two original pin overhangs independently.",
+    "figure_number": 2
+  },
+  {
+    "id": 41,
+    "file": "fixed geometry.png",
+    "group": "bracket-setup",
+    "asset": "images/41-fixed-geometry.webp",
+    "caption": "Baseline fixed geometry on the interior mounting surfaces. This approximates a fully restrained T-beam interface.",
+    "figure_number": 3
+  },
+  {
+    "id": 42,
+    "file": "Force selection.png",
+    "group": "bracket-setup",
+    "asset": "images/42-force-selection.webp",
+    "caption": "Baseline force selection: two split pin faces, 600 lbf per item. Two selected faces imply 1,200 lbf total.",
+    "figure_number": 4
+  },
+  {
+    "id": 4,
+    "file": "Coarse mesh image.png",
+    "group": "bracket-setup",
+    "asset": "images/04-coarse-mesh-image.webp",
+    "caption": "Bracket Design 1: Coarse mesh image.",
+    "figure_number": 5
+  },
+  {
+    "id": 5,
+    "file": "Coarse stress.png",
+    "group": "bracket-setup",
+    "asset": "images/05-coarse-stress.webp",
+    "caption": "Bracket Design 1: Coarse stress.",
+    "figure_number": 6
+  },
+  {
+    "id": 2,
+    "file": "Coarse Displacement.png",
+    "group": "bracket-setup",
+    "asset": "images/02-coarse-displacement.webp",
+    "caption": "Bracket Design 1: Coarse Displacement.",
+    "figure_number": 7
+  },
+  {
+    "id": 3,
+    "file": "Coarse FOS.png",
+    "group": "bracket-setup",
+    "asset": "images/03-coarse-fos.webp",
+    "caption": "Bracket Design 1: Coarse FOS.",
+    "figure_number": 8
+  },
+  {
+    "id": 84,
+    "file": "medium mesh elements.png",
+    "group": "bracket-setup",
+    "asset": "images/84-medium-mesh-elements.webp",
+    "caption": "Bracket Design 1: medium mesh elements.",
+    "figure_number": 9
+  },
+  {
+    "id": 85,
+    "file": "medium stress.png",
+    "group": "bracket-setup",
+    "asset": "images/85-medium-stress.webp",
+    "caption": "Bracket Design 1: medium stress.",
+    "figure_number": 10
+  },
+  {
+    "id": 82,
+    "file": "medium displacement.png",
+    "group": "bracket-setup",
+    "asset": "images/82-medium-displacement.webp",
+    "caption": "Bracket Design 1: medium displacement.",
+    "figure_number": 11
+  },
+  {
+    "id": 83,
+    "file": "medium FOS.png",
+    "group": "bracket-setup",
+    "asset": "images/83-medium-fos.webp",
+    "caption": "Bracket Design 1: medium FOS.",
+    "figure_number": 12
+  },
+  {
+    "id": 81,
+    "file": "mass.png",
+    "group": "bracket-setup",
+    "asset": "images/81-mass.webp",
+    "caption": "Bracket Design 1: mass.",
+    "figure_number": 13
+  },
+  {
+    "id": 43,
+    "file": "Geometry Change.png",
+    "group": "bracket-setup",
+    "asset": "images/43-geometry-change.webp",
+    "caption": "Diagonal support sketch used to replace the narrow baseline connector.",
+    "figure_number": 14
+  },
+  {
+    "id": 38,
+    "file": "extrude.png",
+    "group": "bracket-setup",
+    "asset": "images/38-extrude.webp",
+    "caption": "Extrusion used to develop the revised lower support.",
+    "figure_number": 15
+  },
+  {
+    "id": 6,
+    "file": "connection with pin.png",
+    "group": "bracket-setup",
+    "asset": "images/06-connection-with-pin.webp",
+    "caption": "Joining the new diagonal supports to the pin region.",
+    "figure_number": 16
+  },
+  {
+    "id": 40,
+    "file": "fillets.png",
+    "group": "bracket-setup",
+    "asset": "images/40-fillets.webp",
+    "caption": "Fillet preview at the support and pin transitions.",
+    "figure_number": 17
+  },
+  {
+    "id": 39,
+    "file": "fillets 2.png",
+    "group": "bracket-setup",
+    "asset": "images/39-fillets-2.webp",
+    "caption": "Second fillet operation on the revised support transitions.",
+    "figure_number": 18
+  },
+  {
+    "id": 12,
+    "file": "Design 2/Design 2 Force.png",
+    "group": "bracket-d2",
+    "asset": "images/12-design-2-force.webp",
+    "caption": "Design 2 force definition: 600 lbf per item on the selected pin face.",
+    "figure_number": 19
+  },
+  {
+    "id": 7,
+    "file": "Design 2/coarse Design 2 mesh.png",
+    "group": "bracket-d2",
+    "asset": "images/07-coarse-design-2-mesh.webp",
+    "caption": "Bracket Design 2: coarse Design 2 mesh.",
+    "figure_number": 20
+  },
+  {
+    "id": 8,
+    "file": "Design 2/coarse mesh details 2.png",
+    "group": "bracket-d2",
+    "asset": "images/08-coarse-mesh-details-2.webp",
+    "caption": "Bracket Design 2: coarse mesh details 2.",
+    "figure_number": 21
+  },
+  {
+    "id": 11,
+    "file": "Design 2/design 2 Coarse Stress.png",
+    "group": "bracket-d2",
+    "asset": "images/11-design-2-coarse-stress.webp",
+    "caption": "Bracket Design 2: design 2 Coarse Stress.",
+    "figure_number": 22
+  },
+  {
+    "id": 9,
+    "file": "Design 2/Design 2 Coarse Displacement.png",
+    "group": "bracket-d2",
+    "asset": "images/09-design-2-coarse-displacement.webp",
+    "caption": "Bracket Design 2: Design 2 Coarse Displacement.",
+    "figure_number": 23
+  },
+  {
+    "id": 10,
+    "file": "Design 2/Design 2 Coarse FOS.png",
+    "group": "bracket-d2",
+    "asset": "images/10-design-2-coarse-fos.webp",
+    "caption": "Bracket Design 2: Design 2 Coarse FOS.",
+    "figure_number": 24
+  },
+  {
+    "id": 16,
+    "file": "Design 2/Design 2 Medium mesh.png",
+    "group": "bracket-d2",
+    "asset": "images/16-design-2-medium-mesh.webp",
+    "caption": "Bracket Design 2: Design 2 Medium mesh.",
+    "figure_number": 25
+  },
+  {
+    "id": 17,
+    "file": "Design 2/Design 2 Medium Stress.png",
+    "group": "bracket-d2",
+    "asset": "images/17-design-2-medium-stress.webp",
+    "caption": "Bracket Design 2: Design 2 Medium Stress.",
+    "figure_number": 26
+  },
+  {
+    "id": 14,
+    "file": "Design 2/Design 2 Medium Displacement.png",
+    "group": "bracket-d2",
+    "asset": "images/14-design-2-medium-displacement.webp",
+    "caption": "Bracket Design 2: Design 2 Medium Displacement.",
+    "figure_number": 27
+  },
+  {
+    "id": 15,
+    "file": "Design 2/Design 2 Medium FOS.png",
+    "group": "bracket-d2",
+    "asset": "images/15-design-2-medium-fos.webp",
+    "caption": "Bracket Design 2: Design 2 Medium FOS.",
+    "figure_number": 28
+  },
+  {
+    "id": 13,
+    "file": "Design 2/Design 2 mass.png",
+    "group": "bracket-d2",
+    "asset": "images/13-design-2-mass.webp",
+    "caption": "Bracket Design 2: Design 2 mass.",
+    "figure_number": 29
+  },
+  {
+    "id": 34,
+    "file": "Design 3/Topology Study Design 3.png",
+    "group": "bracket-d3",
+    "asset": "images/34-topology-study-design-3.webp",
+    "caption": "Bracket topology goals: stiffness-to-weight, 30% mass reduction, 0.005-in displacement limit, and FOS 4.",
+    "figure_number": 30
+  },
+  {
+    "id": 30,
+    "file": "Design 3/Symmetry plane.png",
+    "group": "bracket-d3",
+    "asset": "images/30-symmetry-plane.webp",
+    "caption": "Half-symmetry plane through the bracket center.",
+    "figure_number": 31
+  },
+  {
+    "id": 31,
+    "file": "Design 3/Thickness.png",
+    "group": "bracket-d3",
+    "asset": "images/31-thickness.webp",
+    "caption": "Bracket topology minimum member-thickness setting: 0.25 in.",
+    "figure_number": 32
+  },
+  {
+    "id": 29,
+    "file": "Design 3/Preserved Surfaces.png",
+    "group": "bracket-d3",
+    "asset": "images/29-preserved-surfaces.webp",
+    "caption": "Preserved mounting and pin regions in the bracket topology study.",
+    "figure_number": 33
+  },
+  {
+    "id": 32,
+    "file": "Design 3/Topology Coarse mesh.png",
+    "group": "bracket-d3",
+    "asset": "images/32-topology-coarse-mesh.webp",
+    "caption": "Topology mesh details; this is separate from the final static-study meshes.",
+    "figure_number": 34
+  },
+  {
+    "id": 35,
+    "file": "Design 3/topology.png",
+    "group": "bracket-d3",
+    "asset": "images/35-topology.webp",
+    "caption": "Raw bracket material-mass plot. Its jagged surface prompted the smoothing step.",
+    "figure_number": 35
+  },
+  {
+    "id": 33,
+    "file": "Design 3/Topology Smoothining.png",
+    "group": "bracket-d3",
+    "asset": "images/33-topology-smoothining.webp",
+    "caption": "Smoothed bracket topology result used as a visual modeling guide.",
+    "figure_number": 36
+  },
+  {
+    "id": 36,
+    "file": "Design 3/Weight Optimization.png",
+    "group": "bracket-d3",
+    "asset": "images/36-weight-optimization.webp",
+    "caption": "Sketching a smoother outer profile from the topology result.",
+    "figure_number": 37
+  },
+  {
+    "id": 19,
+    "file": "Design 3/Cut.png",
+    "group": "bracket-d3",
+    "asset": "images/19-cut.webp",
+    "caption": "Cut feature used to remove material from the outer bracket envelope.",
+    "figure_number": 38
+  },
+  {
+    "id": 37,
+    "file": "Design 3/weight optimized part.png",
+    "group": "bracket-d3",
+    "asset": "images/37-weight-optimized-part.webp",
+    "caption": "Remodeled bracket after the outer material-removal cut.",
+    "figure_number": 39
+  },
+  {
+    "id": 23,
+    "file": "Design 3/Design 3 Fixtures.png",
+    "group": "bracket-d3",
+    "asset": "images/23-design-3-fixtures.webp",
+    "caption": "Design 3 fixed-geometry selection on the internal mounting faces.",
+    "figure_number": 40
+  },
+  {
+    "id": 18,
+    "file": "Design 3/Coarse Mesh Design 3.png",
+    "group": "bracket-d3",
+    "asset": "images/18-coarse-mesh-design-3.webp",
+    "caption": "Bracket Design 3: Coarse Mesh Design 3.",
+    "figure_number": 41
+  },
+  {
+    "id": 22,
+    "file": "Design 3/Design 3 Coarse Stress.png",
+    "group": "bracket-d3",
+    "asset": "images/22-design-3-coarse-stress.webp",
+    "caption": "Bracket Design 3: Design 3 Coarse Stress.",
+    "figure_number": 42
+  },
+  {
+    "id": 20,
+    "file": "Design 3/Design 3 Coarse Displacement.png",
+    "group": "bracket-d3",
+    "asset": "images/20-design-3-coarse-displacement.webp",
+    "caption": "Bracket Design 3: Design 3 Coarse Displacement.",
+    "figure_number": 43
+  },
+  {
+    "id": 21,
+    "file": "Design 3/Design 3 Coarse FOS.png",
+    "group": "bracket-d3",
+    "asset": "images/21-design-3-coarse-fos.webp",
+    "caption": "Bracket Design 3: Design 3 Coarse FOS.",
+    "figure_number": 44
+  },
+  {
+    "id": 26,
+    "file": "Design 3/Design 3 Medium mesh.png",
+    "group": "bracket-d3",
+    "asset": "images/26-design-3-medium-mesh.webp",
+    "caption": "Bracket Design 3: Design 3 Medium mesh.",
+    "figure_number": 45
+  },
+  {
+    "id": 27,
+    "file": "Design 3/Design 3 Medium Stress.png",
+    "group": "bracket-d3",
+    "asset": "images/27-design-3-medium-stress.webp",
+    "caption": "Bracket Design 3: Design 3 Medium Stress.",
+    "figure_number": 46
+  },
+  {
+    "id": 24,
+    "file": "Design 3/Design 3 Medium Displacement.png",
+    "group": "bracket-d3",
+    "asset": "images/24-design-3-medium-displacement.webp",
+    "caption": "Bracket Design 3: Design 3 Medium Displacement.",
+    "figure_number": 47
+  },
+  {
+    "id": 25,
+    "file": "Design 3/Design 3 Medium FOS.png",
+    "group": "bracket-d3",
+    "asset": "images/25-design-3-medium-fos.webp",
+    "caption": "Bracket Design 3: Design 3 Medium FOS.",
+    "figure_number": 48
+  },
+  {
+    "id": 28,
+    "file": "Design 3/Mass after optimization.png",
+    "group": "bracket-d3",
+    "asset": "images/28-mass-after-optimization.webp",
+    "caption": "Bracket Design 3: Mass after optimization.",
+    "figure_number": 49
+  },
+  {
+    "id": 52,
+    "file": "Link/Design 1/Fixed geometry for smaller hole.png",
+    "group": "link-d1",
+    "asset": "images/52-fixed-geometry-for-smaller-hole.webp",
+    "caption": "Link fixture on the inner cylindrical face of the smaller hole.",
+    "figure_number": 50
+  },
+  {
+    "id": 53,
+    "file": "Link/Design 1/Force on larger hole.png",
+    "group": "link-d1",
+    "asset": "images/53-force-on-larger-hole.webp",
+    "caption": "Link force definition: 600 lbf applied to the larger-hole face along the link centerline.",
+    "figure_number": 51
+  },
+  {
+    "id": 44,
+    "file": "Link/Design 1/Coarse Mesh Design 1.png",
+    "group": "link-d1",
+    "asset": "images/44-coarse-mesh-design-1.webp",
+    "caption": "Link Design 1: Coarse Mesh Design 1.",
+    "figure_number": 52
+  },
+  {
+    "id": 47,
+    "file": "Link/Design 1/Design 1 Coarse Stress.png",
+    "group": "link-d1",
+    "asset": "images/47-design-1-coarse-stress.webp",
+    "caption": "Link Design 1: Design 1 Coarse Stress.",
+    "figure_number": 53
+  },
+  {
+    "id": 45,
+    "file": "Link/Design 1/Design 1 Coarse Displacement.png",
+    "group": "link-d1",
+    "asset": "images/45-design-1-coarse-displacement.webp",
+    "caption": "Link Design 1: Design 1 Coarse Displacement.",
+    "figure_number": 54
+  },
+  {
+    "id": 46,
+    "file": "Link/Design 1/Design 1 Coarse FOS.png",
+    "group": "link-d1",
+    "asset": "images/46-design-1-coarse-fos.webp",
+    "caption": "Link Design 1: Design 1 Coarse FOS.",
+    "figure_number": 55
+  },
+  {
+    "id": 50,
+    "file": "Link/Design 1/Design 1 Medium mesh.png",
+    "group": "link-d1",
+    "asset": "images/50-design-1-medium-mesh.webp",
+    "caption": "Link Design 1: Design 1 Medium mesh.",
+    "figure_number": 56
+  },
+  {
+    "id": 51,
+    "file": "Link/Design 1/Design 1 Medium Stress.png",
+    "group": "link-d1",
+    "asset": "images/51-design-1-medium-stress.webp",
+    "caption": "Link Design 1: Design 1 Medium Stress.",
+    "figure_number": 57
+  },
+  {
+    "id": 48,
+    "file": "Link/Design 1/Design 1 Medium Displacement.png",
+    "group": "link-d1",
+    "asset": "images/48-design-1-medium-displacement.webp",
+    "caption": "Link Design 1: Design 1 Medium Displacement.",
+    "figure_number": 58
+  },
+  {
+    "id": 49,
+    "file": "Link/Design 1/Design 1 Medium FOS.png",
+    "group": "link-d1",
+    "asset": "images/49-design-1-medium-fos.webp",
+    "caption": "Link Design 1: Design 1 Medium FOS.",
+    "figure_number": 59
+  },
+  {
+    "id": 54,
+    "file": "Link/Design 1/Mass Design 1.png",
+    "group": "link-d1",
+    "asset": "images/54-mass-design-1.webp",
+    "caption": "Link Design 1: Mass Design 1.",
+    "figure_number": 60
+  },
+  {
+    "id": 63,
+    "file": "Link/Design 2/Design 2 width Change.png",
+    "group": "link-d2",
+    "asset": "images/63-design-2-width-change.webp",
+    "caption": "Link width increased from 1.50 to 2.00 in; thickness remains 0.125 in and hole-center spacing remains 3.00 in.",
+    "figure_number": 61
+  },
+  {
+    "id": 57,
+    "file": "Link/Design 2/Design 2 Coarse Mesh.png",
+    "group": "link-d2",
+    "asset": "images/57-design-2-coarse-mesh.webp",
+    "caption": "Link Design 2: Design 2 Coarse Mesh.",
+    "figure_number": 62
+  },
+  {
+    "id": 58,
+    "file": "Link/Design 2/Design 2 Coarse Stress.jpg",
+    "group": "link-d2",
+    "asset": "images/58-design-2-coarse-stress.webp",
+    "caption": "Link Design 2: Design 2 Coarse Stress.",
+    "figure_number": 63
+  },
+  {
+    "id": 55,
+    "file": "Link/Design 2/Design 2 Coarse Displacement.jpg",
+    "group": "link-d2",
+    "asset": "images/55-design-2-coarse-displacement.webp",
+    "caption": "Link Design 2: Design 2 Coarse Displacement.",
+    "figure_number": 64
+  },
+  {
+    "id": 56,
+    "file": "Link/Design 2/Design 2 Coarse FOS.jpg",
+    "group": "link-d2",
+    "asset": "images/56-design-2-coarse-fos.webp",
+    "caption": "Link Design 2: Design 2 Coarse FOS.",
+    "figure_number": 65
+  },
+  {
+    "id": 61,
+    "file": "Link/Design 2/Design 2 Medium Mesh.png",
+    "group": "link-d2",
+    "asset": "images/61-design-2-medium-mesh.webp",
+    "caption": "Link Design 2: Design 2 Medium Mesh.",
+    "figure_number": 66
+  },
+  {
+    "id": 62,
+    "file": "Link/Design 2/Design 2 Medium Stress.png",
+    "group": "link-d2",
+    "asset": "images/62-design-2-medium-stress.webp",
+    "caption": "Link Design 2: Design 2 Medium Stress.",
+    "figure_number": 67
+  },
+  {
+    "id": 59,
+    "file": "Link/Design 2/Design 2 Medium Displacement.png",
+    "group": "link-d2",
+    "asset": "images/59-design-2-medium-displacement.webp",
+    "caption": "Link Design 2: Design 2 Medium Displacement.",
+    "figure_number": 68
+  },
+  {
+    "id": 60,
+    "file": "Link/Design 2/Design 2 Medium FOS.png",
+    "group": "link-d2",
+    "asset": "images/60-design-2-medium-fos.webp",
+    "caption": "Link Design 2: Design 2 Medium FOS.",
+    "figure_number": 69
+  },
+  {
+    "id": 64,
+    "file": "Link/Design 2/mass.png",
+    "group": "link-d2",
+    "asset": "images/64-mass.webp",
+    "caption": "Link Design 2: mass.",
+    "figure_number": 70
+  },
+  {
+    "id": 79,
+    "file": "Link/Design 3/Topology Goals and Conts.png",
+    "group": "link-d3",
+    "asset": "images/79-topology-goals-and-conts.webp",
+    "caption": "Link topology goals and constraints, including 30% mass reduction and FOS 4.",
+    "figure_number": 71
+  },
+  {
+    "id": 78,
+    "file": "Link/Design 3/Thickness.png",
+    "group": "link-d3",
+    "asset": "images/78-thickness.webp",
+    "caption": "Link topology minimum member-thickness control set to 0.125 in.",
+    "figure_number": 72
+  },
+  {
+    "id": 77,
+    "file": "Link/Design 3/Preserved Regions.png",
+    "group": "link-d3",
+    "asset": "images/77-preserved-regions.webp",
+    "caption": "Preserved regions around the two link-hole interfaces.",
+    "figure_number": 73
+  },
+  {
+    "id": 70,
+    "file": "Link/Design 3/Coarse topology before smoothining.png",
+    "group": "link-d3",
+    "asset": "images/70-coarse-topology-before-smoothining.webp",
+    "caption": "Raw link topology result before smoothing.",
+    "figure_number": 74
+  },
+  {
+    "id": 65,
+    "file": "Link/Design 3/after smoothining.png",
+    "group": "link-d3",
+    "asset": "images/65-after-smoothining.webp",
+    "caption": "Smoothed link topology result displayed against the original outline.",
+    "figure_number": 75
+  },
+  {
+    "id": 71,
+    "file": "Link/Design 3/Manual Optmization cut.png",
+    "group": "link-d3",
+    "asset": "images/71-manual-optmization-cut.webp",
+    "caption": "Manual cut following the topology-inspired link outline, with a 0.10-in blind-cut depth.",
+    "figure_number": 76
+  },
+  {
+    "id": 80,
+    "file": "Link/Design 3/Topology optimized part.png",
+    "group": "link-d3",
+    "asset": "images/80-topology-optimized-part.webp",
+    "caption": "Link after the manual material-removal operation.",
+    "figure_number": 77
+  },
+  {
+    "id": 68,
+    "file": "Link/Design 3/Coarse mesh.png",
+    "group": "link-d3",
+    "asset": "images/68-coarse-mesh.webp",
+    "caption": "Link Design 3: Coarse mesh.",
+    "figure_number": 78
+  },
+  {
+    "id": 69,
+    "file": "Link/Design 3/Coarse stress.png",
+    "group": "link-d3",
+    "asset": "images/69-coarse-stress.webp",
+    "caption": "Link Design 3: Coarse stress.",
+    "figure_number": 79
+  },
+  {
+    "id": 66,
+    "file": "Link/Design 3/Coarse Displacement.png",
+    "group": "link-d3",
+    "asset": "images/66-coarse-displacement.webp",
+    "caption": "Link Design 3: Coarse Displacement.",
+    "figure_number": 80
+  },
+  {
+    "id": 67,
+    "file": "Link/Design 3/Coarse FOS.png",
+    "group": "link-d3",
+    "asset": "images/67-coarse-fos.webp",
+    "caption": "Link Design 3: Coarse FOS.",
+    "figure_number": 81
+  },
+  {
+    "id": 75,
+    "file": "Link/Design 3/Medium Mesh.png",
+    "group": "link-d3",
+    "asset": "images/75-medium-mesh.webp",
+    "caption": "Link Design 3: Medium Mesh.",
+    "figure_number": 82
+  },
+  {
+    "id": 76,
+    "file": "Link/Design 3/Medium Stress.png",
+    "group": "link-d3",
+    "asset": "images/76-medium-stress.webp",
+    "caption": "Link Design 3: Medium Stress.",
+    "figure_number": 83
+  },
+  {
+    "id": 73,
+    "file": "Link/Design 3/Medium Displacement.png",
+    "group": "link-d3",
+    "asset": "images/73-medium-displacement.webp",
+    "caption": "Link Design 3: Medium Displacement.",
+    "figure_number": 84
+  },
+  {
+    "id": 74,
+    "file": "Link/Design 3/Medium FOS.png",
+    "group": "link-d3",
+    "asset": "images/74-medium-fos.webp",
+    "caption": "Link Design 3: Medium FOS.",
+    "figure_number": 85
+  },
+  {
+    "id": 72,
+    "file": "Link/Design 3/mass.png",
+    "group": "link-d3",
+    "asset": "images/72-mass.webp",
+    "caption": "Link Design 3: mass.",
+    "figure_number": 86
+  }
+]

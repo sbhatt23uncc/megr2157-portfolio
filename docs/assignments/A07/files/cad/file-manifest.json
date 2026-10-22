@@ -1,0 +1,44 @@
+[
+  {
+    "filename": "a6 Design 2.SLDPRT",
+    "role": "Bracket Design 2 - saved model",
+    "sha256": "b6cbaa5b85ca7ac52846b2210138de2207c8a3dd78bcf2d800450778dce8b5af",
+    "bytes": 263627
+  },
+  {
+    "filename": "a6 Design 3 after topology.SLDPRT",
+    "role": "Bracket Design 3 - final named model",
+    "sha256": "f805b6e48d7a89cd90ef7f9055508462ae05d1ac411faa8499f51bd092d2d777",
+    "bytes": 321843
+  },
+  {
+    "filename": "a6 Design 3.SLDPRT",
+    "role": "Bracket Design 3 - earlier working file",
+    "sha256": "776558e41c531e0e22ec71427f122a6d16e1e1055abf6857f0bfd1f76840df98",
+    "bytes": 285351
+  },
+  {
+    "filename": "A6 link.SLDPRT",
+    "role": "Link - final saved model",
+    "sha256": "3d7bba935b871cda62123e4b120dc942f4b078c897ffd778a021fcfc1af60980",
+    "bytes": 132607
+  },
+  {
+    "filename": "a6.SLDPRT",
+    "role": "Bracket - working model",
+    "sha256": "a445f234f0da9fc791285f98b8885a8b477a1cf5b37ea66bc6229ab76bc2d6cb",
+    "bytes": 279414
+  },
+  {
+    "filename": "A06-baseline/a6.SLDPRT",
+    "role": "Original A6 starting geometry",
+    "sha256": "9cca3f41cea2b42bb50728c975110a80c3c5ca6e712690d5b8757bef111d79ec",
+    "bytes": 114291
+  },
+  {
+    "filename": "A06-baseline/A6 link.SLDPRT",
+    "role": "Original A6 starting geometry",
+    "sha256": "4d98d3bfad7f1d18b85ecba8815733969c6919d017f4185949c552fa4ec84f1a",
+    "bytes": 122864
+  }
+]
