@@ -1,0 +1,79 @@
+[
+  {
+    "figure": 1,
+    "file": "FINAL ASSEMBLY.png",
+    "key": "assembly",
+    "caption": "Open housing assembly showing the 48-tooth gear, 18-tooth pinion, and protruding shafts.",
+    "kind": "cad"
+  },
+  {
+    "figure": 2,
+    "file": "Mechatronics Homework-1.jpg",
+    "key": "work1",
+    "caption": "Handwritten input-speed, torque, power, and shaft-design setup.",
+    "kind": "handwork"
+  },
+  {
+    "figure": 3,
+    "file": "Mechatronics Homework-2.jpg",
+    "key": "work2",
+    "caption": "Handwritten torsion equations, shaft FBD, and gear-force calculations. The typed shaft sections separate the input and output results.",
+    "kind": "handwork"
+  },
+  {
+    "figure": 4,
+    "file": "Mechatronics Homework-3.jpg",
+    "key": "work3",
+    "caption": "Output shaft torque FBD, centered bearing-support diagrams, and individual bearing equilibrium.",
+    "kind": "handwork"
+  },
+  {
+    "figure": 5,
+    "file": "Mechatronics Homework-4.jpg",
+    "key": "work4",
+    "caption": "Bronze reference limits and input bearing length from pressure and PV.",
+    "kind": "handwork"
+  },
+  {
+    "figure": 6,
+    "file": "Mechatronics Homework-5.jpg",
+    "key": "work5",
+    "caption": "Output bearing length and setup for the sleeve wall-thickness model.",
+    "kind": "handwork"
+  },
+  {
+    "figure": 7,
+    "file": "Mechatronics Homework-6.jpg",
+    "key": "work6",
+    "caption": "Sleeve wall-stress FBD, thick-cylinder model, and input/output thickness calculations.",
+    "kind": "handwork"
+  },
+  {
+    "figure": 8,
+    "file": "Mechatronics Homework-7.jpg",
+    "key": "work7",
+    "caption": "Housing sketch showing the gear pair, enclosure, and two front attachment locations.",
+    "kind": "handwork"
+  },
+  {
+    "figure": 9,
+    "file": "Screenshot_1.png",
+    "key": "inputshaft",
+    "caption": "Input shaft CAD: 1.000-in length. The diameter display is rounded; the drawing specifies 0.125 in.",
+    "kind": "cad"
+  },
+  {
+    "figure": 10,
+    "file": ".25 shaft.png",
+    "key": "outputshaft",
+    "caption": "Output shaft CAD: 1.000-in length and 0.250-in diameter, with chamfered ends.",
+    "kind": "cad"
+  },
+  {
+    "figure": 11,
+    "file": "meshing gears.png",
+    "key": "mesh",
+    "caption": "Gear layout with the 0.6875-in center-distance dimension.",
+    "kind": "cad"
+  }
+]
