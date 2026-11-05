@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="930" viewBox="0 0 1000 930" role="img" aria-label="Dimensioned pulley frame concept"><defs>
+<marker id="red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0 0 L8 4 L0 8 Z" fill="#b42335"/></marker>
+<marker id="blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0 0 L8 4 L0 8 Z" fill="#24558c"/></marker>
+<marker id="green" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0 0 L8 4 L0 8 Z" fill="#247044"/></marker>
+<marker id="ink" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0 0 L8 4 L0 8 Z" fill="#182537"/></marker>
+<marker id="gray" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0 0 L8 4 L0 8 Z" fill="#64748b"/></marker>
+</defs>
+<rect width="1000" height="930" fill="white"/>
+<text x="30" y="35" fill="#182537" font-family="Arial, sans-serif" font-size="25" text-anchor="start" font-weight="700">Frame concept - front and top views</text>
+<text x="30" y="64" fill="#64748b" font-family="Arial, sans-serif" font-size="17" text-anchor="start">Nominal layout; dimensions in inches; schematic, not a manufacturing drawing.</text>
+<text x="55" y="112" fill="#182537" font-family="Arial, sans-serif" font-size="20" text-anchor="start" font-weight="700">FRONT VIEW</text>
+<rect x="145" y="335" width="703.0" height="18.5" fill="#dce5f2" stroke="#182537" stroke-width="2"/>
+<rect x="274.5" y="168.5" width="74" height="166.5" fill="#eef3f9" stroke="#182537" stroke-width="1.5"/>
+<rect x="237.5" y="316.5" width="148" height="18.5" fill="#dce5f2" stroke="#182537" stroke-width="1.5"/>
+<circle cx="311.5" cy="205.5" r="111.0" fill="none" stroke="#24558c" stroke-width="2"/>
+<circle cx="311.5" cy="205.5" r="9.25" fill="none" stroke="#182537" stroke-width="2"/>
+<line x1="296.5" y1="205.5" x2="326.5" y2="205.5" stroke="#64748b" stroke-width="1"/>
+<line x1="311.5" y1="190.5" x2="311.5" y2="220.5" stroke="#64748b" stroke-width="1"/>
+<rect x="644.5" y="168.5" width="74" height="166.5" fill="#eef3f9" stroke="#182537" stroke-width="1.5"/>
+<rect x="607.5" y="316.5" width="148" height="18.5" fill="#dce5f2" stroke="#182537" stroke-width="1.5"/>
+<circle cx="681.5" cy="205.5" r="111.0" fill="none" stroke="#24558c" stroke-width="2"/>
+<circle cx="681.5" cy="205.5" r="9.25" fill="none" stroke="#182537" stroke-width="2"/>
+<line x1="666.5" y1="205.5" x2="696.5" y2="205.5" stroke="#64748b" stroke-width="1"/>
+<line x1="681.5" y1="190.5" x2="681.5" y2="220.5" stroke="#64748b" stroke-width="1"/>
+<path d="M 311.5 101.4375 L 681.5 101.4375 A 104.0625 104.0625 0 0 1 681.5 309.5625 L 311.5 309.5625 A 104.0625 104.0625 0 0 1 311.5 101.4375" stroke="#182537" stroke-width="3" fill="none"/>
+<line x1="311.5" y1="95" x2="681.5" y2="95" stroke="#64748b" stroke-width="1"/>
+<line x1="311.5" y1="90" x2="311.5" y2="100" stroke="#64748b" stroke-width="1"/>
+<line x1="681.5" y1="90" x2="681.5" y2="100" stroke="#64748b" stroke-width="1"/>
+<text x="496.5" y="85.0" fill="#64748b" font-family="Arial, sans-serif" font-size="17" text-anchor="middle">5.000 shaft spacing</text>
+<line x1="145" y1="390" x2="848.0" y2="390" stroke="#64748b" stroke-width="1"/>
+<line x1="145" y1="385" x2="145" y2="395" stroke="#64748b" stroke-width="1"/>
+<line x1="848.0" y1="385" x2="848.0" y2="395" stroke="#64748b" stroke-width="1"/>
+<text x="496.5" y="380.0" fill="#64748b" font-family="Arial, sans-serif" font-size="17" text-anchor="middle">9.500 base length</text>
+<line x1="108" y1="205.5" x2="108" y2="335" stroke="#64748b" stroke-width="1"/>
+<line x1="100" y1="205.5" x2="116" y2="205.5" stroke="#64748b" stroke-width="1"/>
+<line x1="100" y1="335" x2="116" y2="335" stroke="#64748b" stroke-width="1"/>
+<text x="96" y="270.25" fill="#64748b" font-family="Arial, sans-serif" font-size="18" text-anchor="end">1.750</text>
+<text x="875" y="222" fill="#24558c" font-family="Arial, sans-serif" font-size="19" text-anchor="start">Ø3.000</text>
+<text x="875" y="246" fill="#24558c" font-family="Arial, sans-serif" font-size="18" text-anchor="start">pulleys</text>
+<text x="500" y="431" fill="#182537" font-family="Arial, sans-serif" font-size="19" text-anchor="middle">Base 9.500 × 4.000 × 0.250; posts 1.000 wide × 0.500 thick</text>
+<text x="55" y="490" fill="#182537" font-family="Arial, sans-serif" font-size="20" text-anchor="start" font-weight="700">TOP VIEW</text>
+<rect x="145" y="525" width="703.0" height="296" fill="none" stroke="#182537" stroke-width="2"/>
+<rect x="237.5" y="589.75" width="148" height="55.5" fill="#f1f5fa" stroke="#64748b" stroke-width="1"/>
+<rect x="274.5" y="599.0" width="74" height="37.0" fill="#dce5f2" stroke="#24558c" stroke-width="2"/>
+<circle cx="274.5" cy="617.5" r="4.4399999999999995" fill="white" stroke="#64748b" stroke-width="1"/>
+<circle cx="348.5" cy="617.5" r="4.4399999999999995" fill="white" stroke="#64748b" stroke-width="1"/>
+<rect x="237.5" y="700.75" width="148" height="55.5" fill="#f1f5fa" stroke="#64748b" stroke-width="1"/>
+<rect x="274.5" y="710.0" width="74" height="37.0" fill="#dce5f2" stroke="#24558c" stroke-width="2"/>
+<circle cx="274.5" cy="728.5" r="4.4399999999999995" fill="white" stroke="#64748b" stroke-width="1"/>
+<circle cx="348.5" cy="728.5" r="4.4399999999999995" fill="white" stroke="#64748b" stroke-width="1"/>
+<rect x="200.5" y="649.875" width="222" height="46.25" fill="none" stroke="#24558c" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="311.5" y1="525" x2="311.5" y2="821" stroke="#182537" stroke-width="4"/>
+<rect x="607.5" y="589.75" width="148" height="55.5" fill="#f1f5fa" stroke="#64748b" stroke-width="1"/>
+<rect x="644.5" y="599.0" width="74" height="37.0" fill="#dce5f2" stroke="#24558c" stroke-width="2"/>
+<circle cx="644.5" cy="617.5" r="4.4399999999999995" fill="white" stroke="#64748b" stroke-width="1"/>
+<circle cx="718.5" cy="617.5" r="4.4399999999999995" fill="white" stroke="#64748b" stroke-width="1"/>
+<rect x="607.5" y="700.75" width="148" height="55.5" fill="#f1f5fa" stroke="#64748b" stroke-width="1"/>
+<rect x="644.5" y="710.0" width="74" height="37.0" fill="#dce5f2" stroke="#24558c" stroke-width="2"/>
+<circle cx="644.5" cy="728.5" r="4.4399999999999995" fill="white" stroke="#64748b" stroke-width="1"/>
+<circle cx="718.5" cy="728.5" r="4.4399999999999995" fill="white" stroke="#64748b" stroke-width="1"/>
+<rect x="570.5" y="649.875" width="222" height="46.25" fill="none" stroke="#24558c" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="681.5" y1="525" x2="681.5" y2="821" stroke="#182537" stroke-width="4"/>
+<line x1="165" y1="673" x2="828.0" y2="673" stroke="#64748b" stroke-width="1" stroke-dasharray="7 5"/>
+<line x1="311.5" y1="505" x2="681.5" y2="505" stroke="#64748b" stroke-width="1"/>
+<line x1="311.5" y1="500" x2="311.5" y2="510" stroke="#64748b" stroke-width="1"/>
+<line x1="681.5" y1="500" x2="681.5" y2="510" stroke="#64748b" stroke-width="1"/>
+<text x="496.5" y="495.0" fill="#64748b" font-family="Arial, sans-serif" font-size="17" text-anchor="middle">5.000 nominal center distance</text>
+<line x1="890" y1="617.5" x2="890" y2="728.5" stroke="#64748b" stroke-width="1"/>
+<text x="900" y="673" fill="#64748b" font-family="Arial, sans-serif" font-size="18" text-anchor="start">1.500</text>
+<text x="900" y="695" fill="#64748b" font-family="Arial, sans-serif" font-size="15" text-anchor="start">bearing span</text>
+<text x="500" y="856" fill="#182537" font-family="Arial, sans-serif" font-size="19" text-anchor="middle">Four bearing posts, two per shaft; pulley centered between bearings.</text>
+<text x="500" y="886" fill="#182537" font-family="Arial, sans-serif" font-size="17" text-anchor="middle">Feet: 2.000 × 0.750 × 0.250. The second shaft mounts translate together.</text>
+<text x="500" y="913" fill="#64748b" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Slots and a positive adjuster set tension along the center-distance direction; C = 4-6 in.</text>
+</svg>

@@ -1,0 +1,86 @@
+[
+  {
+    "figure": 1,
+    "key": "initial",
+    "file": "initial-schematic.png",
+    "caption": "Initial two-pulley schematic used to establish the open-belt layout.",
+    "kind": "initial"
+  },
+  {
+    "figure": 2,
+    "key": "beltfbd",
+    "file": "belt-fbd.svg",
+    "caption": "Belt and pulley FBD. Red arrows show the individual span forces; shaft reactions balance the forces. Applied driver and resisting load torques act in opposite senses.",
+    "kind": "diagram"
+  },
+  {
+    "figure": 3,
+    "key": "work1",
+    "file": "handwritten-01.webp",
+    "caption": "Handwritten geometry, system FBD, and symbolic and numerical limiting belt-tension calculations.",
+    "kind": "handwork"
+  },
+  {
+    "figure": 4,
+    "key": "work2",
+    "file": "handwritten-02.webp",
+    "caption": "Handwritten belt speed, operating and limiting torque and power, and initial belt-area calculation.",
+    "kind": "handwork"
+  },
+  {
+    "figure": 5,
+    "key": "work3",
+    "file": "handwritten-03.webp",
+    "caption": "Handwritten centrifugal allowance, selected belt area, belt safety factors, and installed circumference.",
+    "kind": "handwork"
+  },
+  {
+    "figure": 6,
+    "key": "shaftfbd",
+    "file": "shaft-fbd.svg",
+    "caption": "Shaft FBD with the centered 12-lbf radial design load, 1.500-in bearing span, equal 6-lbf reactions, and opposing transmitted torques.",
+    "kind": "diagram"
+  },
+  {
+    "figure": 7,
+    "key": "work4",
+    "file": "handwritten-04.webp",
+    "caption": "Handwritten shaft FBD, reactions, bending moment, torsion sizing, and combined bending/torsion sizing.",
+    "kind": "handwork"
+  },
+  {
+    "figure": 8,
+    "key": "bearingfbd",
+    "file": "bearing-fbd.svg",
+    "caption": "Isolated journal bearing FBD and axial view. The 6-lbf shaft load is balanced by the housing reaction.",
+    "kind": "diagram"
+  },
+  {
+    "figure": 9,
+    "key": "work5",
+    "file": "handwritten-05.webp",
+    "caption": "Handwritten journal-bearing knowns, pressure and velocity equations, minimum lengths, and PV results.",
+    "kind": "handwork"
+  },
+  {
+    "figure": 10,
+    "key": "frameconcept",
+    "file": "frame-concept.svg",
+    "caption": "Dimensioned frame concept derived from the analysis: front and top views, four supports, nominal 5-in shaft spacing, and 1.500-in bearing spans.",
+    "kind": "diagram"
+  },
+  {
+    "figure": 11,
+    "key": "postfbd",
+    "file": "post-fbd.svg",
+    "caption": "Bearing-post FBD for the cantilever model, showing the 6-lbf load at a 1.750-in height and the fixed-foot reactions.",
+    "kind": "diagram"
+  },
+  {
+    "figure": 12,
+    "key": "work6",
+    "file": "handwritten-06.webp",
+    "caption": "Handwritten post FBD, post stress and deflection, and base-plate checks.",
+    "kind": "handwork"
+  }
+]

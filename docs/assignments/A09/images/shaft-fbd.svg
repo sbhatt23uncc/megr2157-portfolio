@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="350" viewBox="0 0 1000 350" role="img" aria-label="Shaft free-body diagram"><defs>
+<marker id="red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0 0 L8 4 L0 8 Z" fill="#b42335"/></marker>
+<marker id="blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0 0 L8 4 L0 8 Z" fill="#24558c"/></marker>
+<marker id="green" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0 0 L8 4 L0 8 Z" fill="#247044"/></marker>
+<marker id="ink" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0 0 L8 4 L0 8 Z" fill="#182537"/></marker>
+<marker id="gray" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0 0 L8 4 L0 8 Z" fill="#64748b"/></marker>
+</defs>
+<rect width="1000" height="350" fill="white"/>
+<text x="30" y="35" fill="#182537" font-family="Arial, sans-serif" font-size="25" text-anchor="start" font-weight="700">Shaft free-body diagram</text>
+<line x1="110" y1="178" x2="890" y2="178" stroke="#182537" stroke-width="6"/>
+<path d="M180 182 L160 216 L200 216 Z" stroke="#182537" stroke-width="2" fill="#eef3f9"/>
+<line x1="180" y1="302" x2="180" y2="225" stroke="#24558c" stroke-width="3" marker-end="url(#blue)"/>
+<text x="202" y="280" fill="#24558c" font-family="Arial, sans-serif" font-size="20" text-anchor="start">RA = 6 lbf</text>
+<path d="M820 182 L800 216 L840 216 Z" stroke="#182537" stroke-width="2" fill="#eef3f9"/>
+<line x1="820" y1="302" x2="820" y2="225" stroke="#24558c" stroke-width="3" marker-end="url(#blue)"/>
+<text x="842" y="280" fill="#24558c" font-family="Arial, sans-serif" font-size="20" text-anchor="start">RB = 6 lbf</text>
+<line x1="500" y1="68" x2="500" y2="170" stroke="#b42335" stroke-width="3" marker-end="url(#red)"/>
+<text x="525" y="92" fill="#b42335" font-family="Arial, sans-serif" font-size="21" text-anchor="start">Fdesign = 12 lbf</text>
+<path d="M 93.39 193.43 L 94.88 191.45 L 96.15 189.33 L 97.21 187.10 L 98.03 184.76 L 98.60 182.35 L 98.92 179.90 L 98.99 177.43 L 98.81 174.96 L 98.37 172.53 L 97.68 170.15 L 96.75 167.86 L 95.59 165.67 L 94.21 163.62 L 92.63 161.72 L 90.86 159.99 L 88.92 158.45 L 86.83 157.12 L 84.62 156.01 L 82.31 155.14 L 79.92 154.51 L 77.47 154.13 L 75.00 154.00 L 72.53 154.13 L 70.08 154.51 L 67.69 155.14 L 65.38 156.01 L 63.17 157.12 L 61.08 158.45 L 59.14 159.99 L 57.37 161.72 L 55.79 163.62 L 54.41 165.67 L 53.25 167.86 L 52.32 170.15 L 51.63 172.53 L 51.19 174.96 L 51.01 177.43 L 51.08 179.90 L 51.40 182.35 L 51.97 184.76 L 52.79 187.10 L 53.85 189.33 L 55.12 191.45 L 56.61 193.43" stroke="#247044" stroke-width="3" fill="none" marker-end="url(#green)"/>
+<path d="M 943.39 162.57 L 944.88 164.55 L 946.15 166.67 L 947.21 168.90 L 948.03 171.24 L 948.60 173.65 L 948.92 176.10 L 948.99 178.57 L 948.81 181.04 L 948.37 183.47 L 947.68 185.85 L 946.75 188.14 L 945.59 190.33 L 944.21 192.38 L 942.63 194.28 L 940.86 196.01 L 938.92 197.55 L 936.83 198.88 L 934.62 199.99 L 932.31 200.86 L 929.92 201.49 L 927.47 201.87 L 925.00 202.00 L 922.53 201.87 L 920.08 201.49 L 917.69 200.86 L 915.38 199.99 L 913.17 198.88 L 911.08 197.55 L 909.14 196.01 L 907.37 194.28 L 905.79 192.38 L 904.41 190.33 L 903.25 188.14 L 902.32 185.85 L 901.63 183.47 L 901.19 181.04 L 901.01 178.57 L 901.08 176.10 L 901.40 173.65 L 901.97 171.24 L 902.79 168.90 L 903.85 166.67 L 905.12 164.55 L 906.61 162.57" stroke="#247044" stroke-width="3" fill="none" marker-end="url(#green)"/>
+<text x="75" y="233" fill="#247044" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Min</text>
+<text x="925" y="233" fill="#247044" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Mout</text>
+<line x1="180" y1="133" x2="500" y2="133" stroke="#64748b" stroke-width="1"/>
+<line x1="180" y1="128" x2="180" y2="138" stroke="#64748b" stroke-width="1"/>
+<line x1="500" y1="128" x2="500" y2="138" stroke="#64748b" stroke-width="1"/>
+<text x="340.0" y="123.0" fill="#64748b" font-family="Arial, sans-serif" font-size="17" text-anchor="middle">0.750 in</text>
+<line x1="500" y1="133" x2="820" y2="133" stroke="#64748b" stroke-width="1"/>
+<line x1="500" y1="128" x2="500" y2="138" stroke="#64748b" stroke-width="1"/>
+<line x1="820" y1="128" x2="820" y2="138" stroke="#64748b" stroke-width="1"/>
+<text x="660.0" y="123.0" fill="#64748b" font-family="Arial, sans-serif" font-size="17" text-anchor="middle">0.750 in</text>
+<text x="500" y="327" fill="#64748b" font-family="Arial, sans-serif" font-size="19" text-anchor="middle">Bearing span S = 1.500 in; Min = Mout = 6.17625 in·lbf for sizing</text>
+</svg>
