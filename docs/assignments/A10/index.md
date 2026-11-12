@@ -21,13 +21,13 @@
 Rick Bhattacharya · Antonio Chiocca · Patrick Klauser<br>
 MEGR 2157 · Total time spent: **10 hours**
 
-<div class="a10-actions"><a href="files/A10-team-report.pdf">Submission PDF</a> · <a href="files/tensile-tester.f3z">Tester assembly</a> · <a href="files/crosshead.f3d">Crosshead CAD</a> · <a href="files/A10-team-website-package.zip">Team website package</a></div>
+<div class="a10-actions"><a href="files/A10-team-report.pdf">Submission PDF</a> · <a href="files/tensile-tester.f3z">Tester assembly</a> · <a href="files/crosshead.f3d">Crosshead CAD</a></div>
 
 ## Objective
 
-We developed the mechanical layout of a benchtop tensile tester around two identical lead screws and a moving aluminum crosshead. The design load is 2 kN, the required crosshead speed is 1–50 mm/min, and the required safety factor is 4. We started with the screw and nut interfaces, used beam calculations to size the crosshead, and compared the crosshead geometry in static FEA before and after rounding its outside corners.
+We designed a benchtop tensile tester with two identical lead screws and a moving 6061 aluminum crosshead. The design requirements are a 2-kN specimen load, a crosshead speed of 1–50 mm/min, and a minimum safety factor of 4. We sized the screws and crosshead, selected matching nuts and flanges, and compared the initial and rounded-corner crossheads using FEA.
 
-The assembly brings the frame, screws, nuts, flanges, and crosshead together. Our analysis focuses on that load-carrying structure. The CAD shown here is a mechanical concept; the grip connection, screw end supports, and synchronized mechanical input remain separate assembly details.
+The assembly includes the frame, screws, nuts, flanges, and crosshead. The grip connection, screw end supports, and mechanical synchronization are outside the modeled assembly.
 
 <figure class="a10-figure cad" id="a10-figure-1"><img src="images/assembly.webp" alt="Tester assembly modeled by Rick Bhattacharya. The two screws and nut/flange assemblies position the moving crosshead inside the T-slot frame." loading="lazy"><figcaption><strong>Figure 1.</strong> Tester assembly modeled by Rick Bhattacharya. The two screws and nut/flange assemblies position the moving crosshead inside the T-slot frame. <a href="images/assembly.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure>
 
@@ -38,8 +38,6 @@ The assembly brings the frame, screws, nuts, flanges, and crosshead together. Ou
 | Rick Bhattacharya | Modeled the tester assembly and crosshead, prepared the crosshead drawing, and completed one of the FEA studies. |
 | Antonio Chiocca (AJ) | Worked through the nut-thread and crosshead calculations, checked the screw calculations, and helped with FEA. |
 | Patrick Klauser | Worked through the lead screw diameter, rotational speed, and torque calculations and completed another FEA study. |
-
-The analysis and CAD sections retain these names so the same team report can appear in all three portfolios.
 
 ## Requirements and design inputs
 
@@ -54,20 +52,20 @@ The analysis and CAD sections retain these names so the same team report can app
 | Selected CAD screw | McMaster 99030A981, 1018 steel, 1/4″-16 Acme, right hand, single start, 18 in |
 | Matching nut / flange in CAD | 95072A881 / 95082A641 |
 | Screw lead, ℓ | 0.0625 in/rev = 1.5875 mm/rev |
-| Steel yield strength used in the worksheets | 370 MPa; a material-condition assumption |
+| Assumed steel yield strength | 370 MPa; a material-condition assumption |
 | Crosshead material | 6061 aluminum |
-| Crosshead overall length / analysis width | 8.00 in / 2.00 in |
-| Drawing thickness | 0.563 in |
+| Crosshead length / width | 8.00 in / 2.00 in |
+| Crosshead thickness | 0.563 in |
 | Distance between screw centers | 6.00 in |
 | Maximum permitted crosshead deflection | 0.100 mm |
 
-The 18-in screw length is not the usable stroke. Nut engagement, end supports, and clearance at each end reduce the available travel. The frame spacing follows the 6-in screw-center distance and leaves the test region between the screws.
+The screw centers are 6 in apart, leaving the specimen region between them.
 
 ## Lead screw sizing — Patrick Klauser
 
 ### Axial load and minimum root diameter
 
-The knowns are the 2,000-N specimen load, two screws, safety factor of 4, and the worksheet yield strength of 370 MPa. We solved for the minimum load-carrying area and the minimum root diameter. The specimen applies a downward force to the crosshead; the two nut interfaces provide the balancing upward reactions.
+Knowns: W = 2,000 N, two screws, n = 4, and assumed steel yield strength Sᵧ = 370 MPa. Unknowns: minimum screw area and root diameter. With the specimen centered between the screws, each nut carries 1,000 N.
 
 <div class="a10-eq">
 ΣF<sub>y</sub> = 0: R<sub>L</sub> + R<sub>R</sub> − W = 0<br>
@@ -81,13 +79,13 @@ A<sub>min</sub> = 4(1,000)/370 = <strong>10.81 mm²</strong><br>
 d<sub>r,min</sub> = √[4(4)(1,000)/(π × 370)] = <strong>3.710 mm = 0.1461 in</strong>
 </div>
 
-The root diameter is the metal remaining below the threads. We kept it separate from the selected 1/4-in outside diameter. This calculation checks axial stress; screw torque, local thread stresses, and compression buckling depend on the final support arrangement. The 370-MPa yield value represents cold-finished 1018 reference data, rather than a certified property of every 1018 screw. [Online Metals: 1018 properties](https://www.onlinemetals.com/en/product-guide/alloy/1018).
+The minimum root diameter from axial stress is 0.1461 in. The selected screw has a nominal outside diameter of 0.250 in. We assumed a 370-MPa yield strength for cold-finished 1018 steel; the purchased screw’s material condition must meet that assumption. [Online Metals: 1018 properties](https://www.onlinemetals.com/en/product-guide/alloy/1018).
 
 <figure class="a10-figure handwork" id="a10-figure-2"><img src="images/patrick-diameter.webp" alt="Patrick Klauser: design constraints, axial screw sizing, FBD, and minimum root diameter." loading="lazy"><figcaption><strong>Figure 2.</strong> Patrick Klauser: design constraints, axial screw sizing, FBD, and minimum root diameter. <a href="images/patrick-diameter.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure>
 
 ### Rotational speed range
 
-For a single-start screw, the nut advances one pitch per revolution. We used revolutions per minute for N and reserved angular velocity, ω, for radians per second.
+Knowns: single-start 1/4″-16 thread and v = 1–50 mm/min. Unknowns: screw speed N and angular velocity ω.
 
 <div class="a10-eq">
 p = 1/16 in = 1.5875 mm<br>
@@ -98,11 +96,11 @@ N<sub>max</sub> = 50/1.5875 = <strong>31.496 rpm</strong><br>
 ω = 2πN/60 = <strong>0.0660–3.298 rad/s</strong>
 </div>
 
-The maximum-speed worksheet result is approximately 31.5 rpm. The intermediate 0.528 value is approximately revolutions per second, not radians per second. Both screws must turn at the same rate to avoid tilting the crosshead.
+The required screw speed is 0.6299–31.496 rpm. We corrected the angular-velocity units in the initial calculation: approximately 0.528 rev/s corresponds to 3.30 rad/s. Both screws must rotate together to keep the crosshead level.
 
 ### Torque at maximum specimen load
 
-We solved for the thread torque using F = 1,000 N per screw, a single-start 1/4″-16 thread, and the 14.5° Acme half-angle. The basic mean thread diameter is d<sub>m</sub> = d − p/2 = 5.55625 mm. The assumed screw/nut friction coefficient is stated explicitly because changing it changes the torque considerably.
+Knowns: F = 1,000 N per screw, Acme half-angle α = 14.5°, and mean thread diameter d<sub>m</sub> = d − p/2 = 5.55625 mm. Unknown: driving torque. We compared friction coefficients of 0.15 and 0.80.
 
 <div class="a10-eq">
 T = (Fd<sub>m</sub>/2)[(ℓ cos α + πμd<sub>m</sub>)/(πd<sub>m</sub> cos α − μℓ)]<br>
@@ -114,19 +112,19 @@ For the worksheet assumption μ = 0.80:<br>
 T = <strong>2.755 N·m per screw</strong>; T<sub>pair,1:1</sub> = <strong>5.511 N·m</strong>
 </div>
 
-Our first torque worksheets used μ = 0.80 and a square-thread approximation. We retained that calculation as part of the development record, then used the Acme flank angle and the basic mean diameter in the comparison above. The 0.15 value is a preliminary friction assumption; the 0.80 case shows the effect of the much higher worksheet assumption. Neither coefficient is a measured value for our purchased screw and bronze nut. Bearing friction, crosshead weight, starting friction, and transmission losses add to the required input torque. [Thread angle and friction reference](https://help.solidworks.com/2022/english/solidworks/cworks/r_Friction_Factor_Coefficient.htm).
+Our initial torque calculation used μ = 0.80 and a square-thread approximation. Including the Acme flank angle gives 2.755 N·m per screw at that friction coefficient. At the preliminary assumption μ = 0.15, the result is 0.6929 N·m per screw. These values exclude bearing friction, crosshead weight, and transmission losses. [Thread angle and friction reference](https://help.solidworks.com/2022/english/solidworks/cworks/r_Friction_Factor_Coefficient.htm).
 
-<figure class="a10-figure handwork" id="a10-figure-3"><img src="images/patrick-speed.webp" alt="Patrick Klauser: screw speed and the first torque calculation. The typed analysis distinguishes rpm from rad/s and states the friction assumptions." loading="lazy"><figcaption><strong>Figure 3.</strong> Patrick Klauser: screw speed and the first torque calculation. The typed analysis distinguishes rpm from rad/s and states the friction assumptions. <a href="images/patrick-speed.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure>
+<figure class="a10-figure handwork" id="a10-figure-3"><img src="images/patrick-speed.webp" alt="Patrick Klauser: rotational speed and torque calculations." loading="lazy"><figcaption><strong>Figure 3.</strong> Patrick Klauser: rotational speed and torque calculations. <a href="images/patrick-speed.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure>
 
 ## Nut and flange analysis — Antonio Chiocca
 
-We selected the bronze, externally threaded 95072A881 nut and its 95082A641 flange. The nut has a right-hand 1/4″-16 internal Acme thread. Its external 9/16″-18 thread connects to the flange. The flange then transfers the nut reaction into the crosshead through its mounting bolts. The external mounting thread and the internal lead-screw thread perform different jobs.
+We selected bronze nut 95072A881 and mounting flange 95082A641. The nut’s internal 1/4″-16 Acme thread matches the screw, and its external 9/16″-18 thread fits the flange. Four mounting bolts at each flange transfer the screw reaction into the crosshead.
 
 <div class="a10-pair"><figure class="a10-figure cad" id="a10-figure-4"><img src="images/nut.webp" alt="Imported externally threaded bronze nut, McMaster 95072A881." loading="lazy"><figcaption><strong>Figure 4.</strong> Imported externally threaded bronze nut, McMaster 95072A881. <a href="images/nut.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure><figure class="a10-figure cad" id="a10-figure-5"><img src="images/flange.webp" alt="Imported nut mounting flange, McMaster 95082A641." loading="lazy"><figcaption><strong>Figure 5.</strong> Imported nut mounting flange, McMaster 95082A641. <a href="images/flange.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure></div>
 
 ### Internal thread bending
 
-The worksheet uses F = 1,000 N = 224.81 lbf, p = 0.0625 in, an effective engagement length L<sub>e</sub> = 0.375 in, and a conservative thread-root diameter d<sub>r</sub> = 0.161 in. These engagement and root dimensions are calculation assumptions. They give six engaged threads under an equal-load-sharing approximation.
+Knowns: F = 224.81 lbf per nut and p = 0.0625 in. We assumed an effective engagement length L<sub>e</sub> = 0.375 in, root diameter d<sub>r</sub> = 0.161 in, and equal loading across six engaged threads. Unknowns: thread bending stress and required bronze yield strength.
 
 <div class="a10-eq">
 N<sub>t</sub> = L<sub>e</sub>/p = 0.375/0.0625 = <strong>6 threads</strong><br>
@@ -138,15 +136,15 @@ Z<sub>thread</sub> = (πd<sub>r</sub>)(p/2)²/6<br>
 Required S<sub>y,nut</sub> ≥ nσ<sub>b</sub> = 4(7.111) = <strong>28.45 ksi</strong>
 </div>
 
-For a reference C67300 bronze yield strength of 30 ksi, this model gives n = 30/7.111 = **4.22**. Wieland Concast lists 30-ksi minimum yield for an extruded-and-drawn C67300 condition. That is the material requirement used for this check, not a strength certification for the McMaster nut. Actual engagement and uneven load distribution between threads affect the result. [C67300 material data](https://www.concast.com/files/C67300.pdf).
+Using the 30-ksi reference yield strength for extruded-and-drawn C67300 bronze gives n = 30/7.111 = **4.22**. This result depends on the assumed engagement, equal thread loading, and bronze material condition. [C67300 material data](https://www.concast.com/files/C67300.pdf).
 
-<figure class="a10-figure handwork" id="a10-figure-6"><img src="images/aj-nut-crosshead.webp" alt="Antonio Chiocca: nut-thread bending and crosshead sizing, including the original support sketches." loading="lazy"><figcaption><strong>Figure 6.</strong> Antonio Chiocca: nut-thread bending and crosshead sizing, including the original support sketches. <a href="images/aj-nut-crosshead.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure>
+<figure class="a10-figure handwork" id="a10-figure-6"><img src="images/aj-nut-crosshead.webp" alt="Antonio Chiocca: nut-thread bending, crosshead sizing, and support sketches." loading="lazy"><figcaption><strong>Figure 6.</strong> Antonio Chiocca: nut-thread bending, crosshead sizing, and support sketches. <a href="images/aj-nut-crosshead.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure>
 
 ## Crosshead beam analysis — Antonio Chiocca
 
 We used the flange diameter to establish a minimum crosshead width. The selected flange is 1 39/64 in, or 1.6094 in, in diameter. A 2-in width gives room around that interface. The drawing places the screw centers 6 in apart within an 8-in overall length; the outer 1-in portions extend beyond the screw centers.
 
-The beam calculation uses W = 2,000 N, span L = 152.4 mm, width b = 50.8 mm, and drawing thickness h = 14.3002 mm. We used E = 68,900 MPa, consistent with the worksheet's aluminum modulus. For the strength example, S<sub>y</sub> = 240 MPa is a stated 6061-T6 design basis; material temper controls the strength of the manufactured part. The screenshots are reported separately using their own displayed FOS values.
+Knowns: W = 2,000 N, support span L = 152.4 mm, width b = 50.8 mm, and crosshead thickness h = 14.3002 mm (0.563 in). We used E = 68,900 MPa and assumed S<sub>y</sub> = 240 MPa for 6061-T6 aluminum. Unknowns: bending stress, minimum thickness, and center deflection.
 
 ### Bending strength
 
@@ -163,11 +161,11 @@ n<sub>beam</sub> = 240/44.01 = <strong>5.45</strong><br>
 h<sub>min,strength</sub> = <strong>12.25 mm = 0.482 in</strong>
 </div>
 
-This gross-section calculation does not include the local stress concentration around mounting holes. That is one reason we also examined the hole regions in FEA.
+The beam calculation uses the gross cross section. We examined the mounting-hole stress concentrations separately in FEA.
 
 ### Deflection and support restraint
 
-The support model changes the deflection substantially. A nut/flange connection may restrain rotation, but it should not automatically be treated as a perfectly fixed end. We compared the simply supported and fully fixed beam limits using the same center load and screw-center span.
+We checked both simply supported and fully fixed ends to show how mounting restraint affects deflection.
 
 <div class="a10-eq">
 Simply supported: δ<sub>max</sub> = WL³/(48EI) = WL³/(4Ebh³)<br>
@@ -178,13 +176,13 @@ Fully fixed ends: δ<sub>max</sub> = WL³/(192EI)<br>
 δ<sub>fixed</sub> = <strong>0.04323 mm</strong>
 </div>
 
-At the drawing thickness, the simple-support result exceeds 0.100 mm while the fully fixed result is below it. The recorded FEA displacements are smaller still. This difference makes the load application area and rotational restraint at the mounting holes important to the interpretation; the beam check and the FEA should not be treated as identical support models. The earlier worksheet used a 384EI denominator and a longer sizing span. We replaced that expression with the center-load formulas above for the 6-in screw-center span.
+At a crosshead thickness of 0.563 in, the simply supported case exceeds the 0.100-mm limit; the fully fixed case meets it. The calculated deflection therefore depends on the rotational restraint provided by the flange mounts. We corrected the initial worksheet’s deflection equation to the center-point-load formulas above and used the 6-in support span.
 
 <figure class="a10-figure handwork" id="a10-figure-7"><img src="images/aj-screw.webp" alt="Antonio Chiocca: screw-load FBD, axial sizing, rotational speed, and torque working." loading="lazy"><figcaption><strong>Figure 7.</strong> Antonio Chiocca: screw-load FBD, axial sizing, rotational speed, and torque working. <a href="images/aj-screw.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure>
 
 ## CAD assembly and drawing — Rick Bhattacharya
 
-We imported the catalog lead screws, nuts, flanges, and T-slot framing, then modeled the crosshead to suit their interfaces. Keeping those catalog parts in the assembly let us check the screw spacing and the fit between the crosshead and the two nut/flange assemblies.
+We imported the McMaster screws, nuts, flanges, and T-slot framing, then modeled the crosshead around the two flange interfaces.
 
 | Component | Source / design role |
 |---|---|
@@ -193,7 +191,7 @@ We imported the catalog lead screws, nuts, flanges, and T-slot framing, then mod
 | Mounting flanges | [95082A641](https://www.mcmaster.com/95082A641/), two |
 | Short framing members | [47065T414](https://www.mcmaster.com/47065T414/), imported 1-ft framing |
 | Uprights | [47065T21](https://www.mcmaster.com/47065T21/), imported 2-ft framing |
-| Crosshead | Custom 6061 aluminum component, available as a Fusion archive below |
+| Crosshead | Custom 6061 aluminum component |
 
 <figure class="a10-figure cad" id="a10-figure-8"><img src="images/interface.webp" alt="Underside of the crosshead showing the two nut/flange interfaces and screw-clearance locations." loading="lazy"><figcaption><strong>Figure 8.</strong> Underside of the crosshead showing the two nut/flange interfaces and screw-clearance locations. <a href="images/interface.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure>
 
@@ -203,13 +201,13 @@ The crosshead has two Ø0.255-in screw-clearance holes and eight Ø0.26-in mount
 
 ### Crosshead multiview drawing
 
-The drawing shows the top, front, side, and isometric views, the 8-in overall length, 6-in screw spacing, 0.563-in thickness, and the two hole sizes. The original CAD drawing is shown below.
+The crosshead drawing includes top, front, side, and isometric views, overall dimensions, screw spacing, and hole diameters.
 
 <div class="a10-pdf"><a class="a10-pdf-title" href="files/Crosshead.pdf">Crosshead drawing · PDF</a><img class="a10-pdf-page" src="images/drawing-page.png" alt="Crosshead drawing, rendered directly from the original PDF" loading="lazy"><details class="a10-reader"><summary>PDF viewer with zoom controls</summary><object type="application/pdf" data="files/Crosshead.pdf" aria-label="Crosshead drawing" width="100%" height="650"><a href="files/Crosshead.pdf">Open PDF</a></object></details></div>
 
 ### Parameters and interface intent
 
-The dimensions that drive this layout are the crosshead length, width, thickness, screw-center spacing, screw-clearance diameter, mounting-hole diameter, and flange-hole offsets. The central specimen force acts midway between the two screw axes. The flange bolts transfer the two reactions into the plate; the center clearance holes let the screws pass through without acting as plain radial bearings.
+The crosshead uses a 6-in screw-center spacing and two matching flange-hole patterns. The Ø0.255-in center holes provide screw clearance; the eight Ø0.26-in holes attach the flanges. The specimen load acts midway between the screw axes.
 
 ## Crosshead FEA and geometry revision — Rick Bhattacharya, Patrick Klauser, and Antonio Chiocca
 
@@ -226,7 +224,7 @@ We compared the initial plate and the rounded-corner revision using static stres
 | Largest displacement region | Between the mounting regions | Between the mounting regions |
 | Displacement / 0.100-mm limit | Approximately 3% | Approximately 12% |
 
-The stress rose by **24.7%** between the recorded results. The displacement increased by roughly a factor of four using the rounded plot labels. We kept those changes in the comparison rather than describing the revision as a stress reduction. The revised study's reported FOS is above the required 4, and its plotted displacement is below 0.100 mm.
+The rounded-corner study showed **24.7% higher peak stress** and approximately four times the displacement of the initial study. Its reported minimum FOS of 11.212 exceeds the required 4, and its maximum resultant displacement of 0.012 mm is below 0.100 mm.
 
 <div class="a10-pair"><figure class="a10-figure cad" id="a10-figure-11"><img src="images/stress-before.webp" alt="Initial study: maximum von Mises stress 2.853 ksi. The strongest stress concentrations are near mounting holes. The displayed deformation is exaggerated." loading="lazy"><figcaption><strong>Figure 11.</strong> Initial study: maximum von Mises stress 2.853 ksi. The strongest stress concentrations are near mounting holes. The displayed deformation is exaggerated. <a href="images/stress-before.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure><figure class="a10-figure cad" id="a10-figure-12"><img src="images/stress-after.webp" alt="Revised study: maximum von Mises stress 3.557 ksi. The critical region remains near the attachment holes. The apparent curvature is the displayed deformation." loading="lazy"><figcaption><strong>Figure 12.</strong> Revised study: maximum von Mises stress 3.557 ksi. The critical region remains near the attachment holes. The apparent curvature is the displayed deformation. <a href="images/stress-after.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure></div>
 
@@ -236,31 +234,31 @@ The stress rose by **24.7%** between the recorded results. The displacement incr
 
 <figure class="a10-figure cad" id="a10-figure-17"><img src="images/fos-detail.webp" alt="Revised study result panel: minimum safety factor 11.212, based on yield strength." loading="lazy"><figcaption><strong>Figure 17.</strong> Revised study result panel: minimum safety factor 11.212, based on yield strength. <a href="images/fos-detail.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure>
 
-The revised stress and FOS imply a solver yield basis of about 39.88 ksi (275 MPa): 3.557 × 11.212 ≈ 39.88. This inferred solver value is distinct from the 240-MPa beam-strength example. The safety-factor colors saturate at 8, so blue does not mean the actual minimum FOS is exactly 8.
+The revised stress and FOS imply a solver yield strength of approximately 275 MPa. The analytical beam check uses the more conservative 240-MPa assumption. The initial FOS plot is capped at 8; its exact minimum was not recorded.
 
-### Volume proxy for the corner change
+### Estimated volume reduction
 
-We estimated the corner radius at approximately 0.40 in from the scaled top view, using its 8-in overall length as the reference. This gives a geometric volume proxy for rounding four corners at constant thickness. It is not an exported CAD mass measurement. The hole volumes cancel when comparing the two outlines because the hole patterns are unchanged.
+Using an estimated 0.40-in corner radius from the scaled top view, we calculated the volume removed by rounding four corners. The thickness and hole pattern remain unchanged. This is a geometric estimate; CAD mass values were not recorded.
 
 <div class="a10-eq">
 ΔA ≈ (4 − π)r² = (4 − π)(0.40)² = <strong>0.13735 in²</strong><br>
 ΔV ≈ ΔA × h = 0.13735(0.563) = <strong>0.07733 in³</strong><br>
-V<sub>initial,proxy</sub> = [8(2) − (π/4)(2 × 0.255² + 8 × 0.26²)](0.563) ≈ <strong>8.711 in³</strong><br>
-V<sub>revised,proxy</sub> ≈ <strong>8.634 in³</strong><br>
+V<sub>initial,estimated</sub> = [8(2) − (π/4)(2 × 0.255² + 8 × 0.26²)](0.563) ≈ <strong>8.711 in³</strong><br>
+V<sub>revised,estimated</sub> ≈ <strong>8.634 in³</strong><br>
 Estimated reduction ≈ <strong>0.89%</strong>
 </div>
 
-The corner change removes a small amount of material and leaves the main bending section and mounting pads intact. The stress concentration remains at the attachment holes, which is a more useful location to examine than the blue outer corners. The broad displacement contours show bending between the supports. A separate vertical-displacement probe at the grip line is needed to distinguish that motion from any lateral displacement or twisting.
+Rounding the corners removes approximately 0.89% of the estimated crosshead volume while preserving the mounting regions. Peak stress remains near the attachment holes, and displacement is greatest between the supports. The plots show resultant displacement; vertical grip displacement and twisting were not measured separately.
 
 ### Interpretation of the studies
 
-These are the recorded results of two geometry studies. They do not establish mesh convergence. The load magnitude is not visible in the response plots, so the 2-kN design requirement is kept separate from the documented plot values. A geometry change and a mesh refinement answer different questions, and the two before/after pictures cannot substitute for a refinement series on the same geometry. Autodesk recommends comparing stress at a consistent location as the mesh is refined. [Fusion mesh convergence guidance](https://help.autodesk.com/cloudhelp/ENU/Fusion-Simulate/files/SIM-MESH-CONVERGENCE.htm).
+Mesh-refinement results and element counts were not recorded. The response plots also do not show the applied load magnitude. These two geometry studies therefore document the recorded before-and-after response without establishing mesh convergence. [Fusion mesh convergence guidance](https://help.autodesk.com/cloudhelp/ENU/Fusion-Simulate/files/SIM-MESH-CONVERGENCE.htm).
 
-The lower FEA deflections also depend on the idealized mounting restraint. We therefore treat the plotted response as the response of those local study conditions, rather than as a measured compliance of the complete tester.
+The fixed mounting-hole restraints contribute to the lower FEA deflections compared with the simply supported beam model.
 
 ## Bill of materials
 
-The purchased-component list totals **$299.91**. Unit costs below are calculated from the recorded line totals and quantities. Custom crosshead machining and material are outside this purchased-parts total.
+The purchased components total **$299.91**, excluding crosshead material and machining.
 
 | Item | Quantity | Component | Cost per item | Line total | Purchase link |
 |---|---:|---|---:|---:|---|
@@ -271,7 +269,7 @@ The purchased-component list totals **$299.91**. Unit costs below are calculated
 | 5 | 2 | 2-ft T-slot framing member | $27.87 | $55.74 | [T-slot framing](https://www.mcmaster.com/products/extrusions/t-slotted-framing-rails-1~~/) |
 | | | **Total** | | **$299.91** | |
 
-The cost sheet uses a 36-in stock screw, while the CAD uses two 18-in precision screws with a different catalog number. The purchased-parts total records the cost-sheet selection. Cutting one exactly 36-in bar into two finished 18-in screws also requires accounting for saw kerf; it does not provide two exact finished lengths by itself.
+The BOM lists one 36-in stock screw; the CAD uses two 18-in precision screws. These are different catalog selections. Two finished 18-in screws require stock allowance for cutting.
 
 <div class="a10-pdf"><a class="a10-pdf-title" href="files/A10-BOM.pdf">Bill of materials · PDF</a><img class="a10-pdf-page" src="images/bom-page.png" alt="Bill of materials, rendered directly from the original PDF" loading="lazy"><details class="a10-reader"><summary>PDF viewer with zoom controls</summary><object type="application/pdf" data="files/A10-BOM.pdf" aria-label="Bill of materials" width="100%" height="650"><a href="files/A10-BOM.pdf">Open PDF</a></object></details></div>
 
@@ -287,18 +285,17 @@ Rounding the outside corners changed the recorded response, but the peak stress 
 
 **Total time spent: 10 hours.**
 
-## CAD, drawing, and team downloads
+## CAD files and supporting documents
 
 | File | Contents |
 |---|---|
 | [Tester assembly — Fusion F3Z](files/tensile-tester.f3z) | Assembly archive with its referenced components |
-| [Crosshead — Fusion F3D](files/crosshead.f3d) | Editable crosshead design and the saved study structure |
+| [Crosshead — Fusion F3D](files/crosshead.f3d) | Crosshead CAD model |
 | [Original drawing export](files/Crosshead.pdf) | Original multiview drawing by Rick Bhattacharya |
 | [Bill of materials](files/A10-BOM.pdf) | Original cost sheet |
 | [Bill of materials CSV](files/A10-BOM.csv) | Editable, typed cost table with purchase links |
 | [Submission PDF](files/A10-team-report.pdf) | Team report, calculations, figures, and original drawing |
 | [Original handwritten work](files/A10-original-work.zip) | The four original calculation photographs |
-| [Team website package](files/A10-team-website-package.zip) | Matching report content, standalone webpage, Markdown, images, CAD, PDFs, and integration notes |
 
 ## References
 

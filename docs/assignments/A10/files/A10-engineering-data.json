@@ -27,7 +27,7 @@
   "crosshead": {
     "length_in": 8,
     "width_in_analysis": 2,
-    "drawing_thickness_in": 0.563,
+    "crosshead_thickness_in": 0.563,
     "support_span_in": 6,
     "material": "6061 aluminum",
     "analytical_E_MPa": 68900,

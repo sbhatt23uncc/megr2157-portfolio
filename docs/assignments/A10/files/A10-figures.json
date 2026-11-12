@@ -85,7 +85,7 @@
   },
   "patrick-speed": {
     "file": "patrick-speed.webp",
-    "caption": "Patrick Klauser: screw speed and the first torque calculation. The typed analysis distinguishes rpm from rad/s and states the friction assumptions.",
+    "caption": "Patrick Klauser: rotational speed and torque calculations.",
     "kind": "handwork",
     "source": "images from Patrick K #1.jpeg"
   },
@@ -97,7 +97,7 @@
   },
   "aj-nut-crosshead": {
     "file": "aj-nut-crosshead.webp",
-    "caption": "Antonio Chiocca: nut-thread bending and crosshead sizing, including the original support sketches.",
+    "caption": "Antonio Chiocca: nut-thread bending, crosshead sizing, and support sketches.",
     "kind": "handwork",
     "source": "IMG_20261111_194053.heic"
   }
