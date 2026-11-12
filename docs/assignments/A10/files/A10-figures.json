@@ -1,0 +1,104 @@
+{
+  "assembly": {
+    "file": "assembly.webp",
+    "caption": "Tester assembly modeled by Rick Bhattacharya. The two screws and nut/flange assemblies position the moving crosshead inside the T-slot frame.",
+    "kind": "cad",
+    "source": "tenslie tester.png"
+  },
+  "interface": {
+    "file": "interface.webp",
+    "caption": "Underside of the crosshead showing the two nut/flange interfaces and screw-clearance locations.",
+    "kind": "cad",
+    "source": "Better view of the crosshead.png"
+  },
+  "nut": {
+    "file": "nut.webp",
+    "caption": "Imported externally threaded bronze nut, McMaster 95072A881.",
+    "kind": "cad",
+    "source": "Lead Screw Nut.png"
+  },
+  "flange": {
+    "file": "flange.webp",
+    "caption": "Imported nut mounting flange, McMaster 95082A641.",
+    "kind": "cad",
+    "source": "Flange.png"
+  },
+  "original": {
+    "file": "original.webp",
+    "caption": "Initial crosshead with square outside corners and two flange-hole groups.",
+    "kind": "cad",
+    "source": "original crosshead.png"
+  },
+  "revised": {
+    "file": "revised.webp",
+    "caption": "Revised crosshead with rounded outside corners. The mounting regions and hole groups are retained.",
+    "kind": "cad",
+    "source": "New crosshead.png"
+  },
+  "stress-before": {
+    "file": "stress-before.webp",
+    "caption": "Initial study: maximum von Mises stress 2.853 ksi. The strongest stress concentrations are near mounting holes. The displayed deformation is exaggerated.",
+    "kind": "cad",
+    "source": "STRESS.png"
+  },
+  "stress-after": {
+    "file": "stress-after.webp",
+    "caption": "Revised study: maximum von Mises stress 3.557 ksi. The critical region remains near the attachment holes. The apparent curvature is the displayed deformation.",
+    "kind": "cad",
+    "source": "Stress after optimization.png"
+  },
+  "disp-before": {
+    "file": "disp-before.webp",
+    "caption": "Initial study: maximum plotted resultant displacement approximately 0.003 mm.",
+    "kind": "cad",
+    "source": "Displacement.png"
+  },
+  "disp-after": {
+    "file": "disp-after.webp",
+    "caption": "Revised study: maximum plotted resultant displacement approximately 0.012 mm.",
+    "kind": "cad",
+    "source": "Displacement after optimization.png"
+  },
+  "fos-before": {
+    "file": "fos-before.webp",
+    "caption": "Initial safety-factor plot. Blue is above the displayed upper scale of 8; it is not an exact numerical minimum.",
+    "kind": "cad",
+    "source": "FOS.png"
+  },
+  "fos-after": {
+    "file": "fos-after.webp",
+    "caption": "Revised safety-factor plot. The target is 4, and the displayed blue field is above the upper scale.",
+    "kind": "cad",
+    "source": "After optimization FOS.png"
+  },
+  "fos-detail": {
+    "file": "fos-detail.webp",
+    "caption": "Revised study result panel: minimum safety factor 11.212, based on yield strength.",
+    "kind": "cad",
+    "source": "Safety factor after optimization picture.png"
+  },
+  "patrick-diameter": {
+    "file": "patrick-diameter.webp",
+    "caption": "Patrick Klauser: design constraints, axial screw sizing, FBD, and minimum root diameter.",
+    "kind": "handwork",
+    "source": "images from Patrick K #2.jpeg"
+  },
+  "patrick-speed": {
+    "file": "patrick-speed.webp",
+    "caption": "Patrick Klauser: screw speed and the first torque calculation. The typed analysis distinguishes rpm from rad/s and states the friction assumptions.",
+    "kind": "handwork",
+    "source": "images from Patrick K #1.jpeg"
+  },
+  "aj-screw": {
+    "file": "aj-screw.webp",
+    "caption": "Antonio Chiocca: screw-load FBD, axial sizing, rotational speed, and torque working.",
+    "kind": "handwork",
+    "source": "IMG_20261111_194051.heic"
+  },
+  "aj-nut-crosshead": {
+    "file": "aj-nut-crosshead.webp",
+    "caption": "Antonio Chiocca: nut-thread bending and crosshead sizing, including the original support sketches.",
+    "kind": "handwork",
+    "source": "IMG_20261111_194053.heic"
+  }
+}

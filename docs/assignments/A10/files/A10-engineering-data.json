@@ -1,0 +1,60 @@
+{
+  "team": [
+    "Rick Bhattacharya",
+    "Antonio Chiocca",
+    "Patrick Klauser"
+  ],
+  "time_hours": 10,
+  "design_load_N": 2000,
+  "load_per_screw_N": 1000,
+  "required_safety_factor": 4,
+  "screw": {
+    "cad_part": "99030A981",
+    "diameter_in": 0.25,
+    "tpi": 16,
+    "starts": 1,
+    "length_in": 18,
+    "lead_mm_per_rev": 1.5875,
+    "root_diameter_axial_min_mm": 3.7101,
+    "yield_assumption_MPa": 370,
+    "rpm_range": [
+      0.6299213,
+      31.496063
+    ],
+    "thread_torque_per_screw_Nm_at_mu_015": 0.6928501,
+    "thread_torque_per_screw_Nm_at_mu_080": 2.7553442
+  },
+  "crosshead": {
+    "length_in": 8,
+    "width_in_analysis": 2,
+    "drawing_thickness_in": 0.563,
+    "support_span_in": 6,
+    "material": "6061 aluminum",
+    "analytical_E_MPa": 68900,
+    "analytical_yield_requirement_MPa": 240,
+    "beam_stress_MPa": 44.0107,
+    "simply_supported_deflection_mm": 0.172908,
+    "fixed_end_deflection_mm": 0.043227,
+    "allowable_deflection_mm": 0.1,
+    "minimum_thickness_for_simple_support_mm": 17.1638
+  },
+  "FEA_recorded": {
+    "initial_stress_ksi": 2.853,
+    "revised_stress_ksi": 3.557,
+    "initial_displacement_mm_rounded": 0.003,
+    "revised_displacement_mm_rounded": 0.012,
+    "initial_FOS": "above display scale of 8",
+    "revised_FOS": 11.212,
+    "mesh_convergence_recorded": false,
+    "load_magnitude_visible_in_plots": false,
+    "measured_CAD_mass_recorded": false
+  },
+  "corner_volume_proxy": {
+    "method": "four rounded corners, radius estimated from the scaled drawing; constant section and hole pattern",
+    "estimated_radius_in": 0.4,
+    "approx_volume_removed_in3": 0.07732533376463144,
+    "approx_reduction_percent": 0.89
+  },
+  "BOM_total_USD": 299.91,
+  "BOM_screw_stock_part": "98935A803"
+}
