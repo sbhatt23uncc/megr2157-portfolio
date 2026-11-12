@@ -15,28 +15,45 @@
     "starts": 1,
     "length_in": 18,
     "lead_mm_per_rev": 1.5875,
-    "root_diameter_axial_min_mm": 3.7101,
-    "yield_assumption_MPa": 370,
-    "rpm_range": [
+    "yield_MPa_from_worksheet": 370,
+    "root_diameter_axial_min_mm_corrected": 3.7101,
+    "rpm_range_corrected": [
       0.6299213,
       31.496063
-    ],
-    "thread_torque_per_screw_Nm_at_mu_015": 0.6928501,
-    "thread_torque_per_screw_Nm_at_mu_080": 2.7553442
+    ]
+  },
+  "torque_worksheet": {
+    "axial_load_N": 1000,
+    "friction_coefficient": 0.8,
+    "radius_in": 0.1048,
+    "lead_in": 0.0625,
+    "final_handwritten_result_lbf_in": 33.8,
+    "corrected_tangential_force_lbf": 217.716927,
+    "corrected_thread_torque_per_screw_lbf_in": 22.816734,
+    "correction": "Final handwritten page uses a diameter as radius; corrected torque uses the preceding worksheet radius consistently."
+  },
+  "nut": {
+    "engaged_threads_from_worksheet": 6,
+    "engagement_in": 0.375,
+    "root_diameter_in": 0.161,
+    "corrected_bending_stress_ksi": 7.111,
+    "required_yield_for_FOS4_ksi": 28.45,
+    "verified_yield_strength": null,
+    "numerical_FOS": null
   },
   "crosshead": {
     "length_in": 8,
-    "width_in_analysis": 2,
+    "width_in_worksheet": 2,
     "crosshead_thickness_in": 0.563,
     "support_span_in": 6,
     "material": "6061 aluminum",
-    "analytical_E_MPa": 68900,
-    "analytical_yield_requirement_MPa": 240,
-    "beam_stress_MPa": 44.0107,
-    "simply_supported_deflection_mm": 0.172908,
-    "fixed_end_deflection_mm": 0.043227,
+    "E_MPa_from_worksheet": 68900,
+    "corrected_beam_stress_MPa": 44.0107,
+    "corrected_simply_supported_deflection_mm": 0.172908,
+    "corrected_fixed_end_deflection_mm": 0.043227,
     "allowable_deflection_mm": 0.1,
-    "minimum_thickness_for_simple_support_mm": 17.1638
+    "recorded_mass": null,
+    "recorded_volume_change": null
   },
   "FEA_recorded": {
     "initial_stress_ksi": 2.853,
@@ -46,14 +63,7 @@
     "initial_FOS": "above display scale of 8",
     "revised_FOS": 11.212,
     "mesh_convergence_recorded": false,
-    "load_magnitude_visible_in_plots": false,
-    "measured_CAD_mass_recorded": false
-  },
-  "corner_volume_proxy": {
-    "method": "four rounded corners, radius estimated from the scaled drawing; constant section and hole pattern",
-    "estimated_radius_in": 0.4,
-    "approx_volume_removed_in3": 0.07732533376463144,
-    "approx_reduction_percent": 0.89
+    "load_magnitude_visible_in_plots": false
   },
   "BOM_total_USD": 299.91,
   "BOM_screw_stock_part": "98935A803"
