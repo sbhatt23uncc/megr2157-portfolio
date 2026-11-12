@@ -61,7 +61,7 @@
   },
   "fos-before": {
     "file": "fos-before.webp",
-    "caption": "Initial safety-factor plot. Blue is above the displayed upper scale of 8; it is not an exact numerical minimum.",
+    "caption": "Initial safety-factor plot. The upper legend value is 8; an exact numerical minimum was not recorded.",
     "kind": "cad",
     "source": "FOS.png"
   },

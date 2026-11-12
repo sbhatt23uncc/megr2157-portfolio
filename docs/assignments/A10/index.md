@@ -96,22 +96,45 @@ N<sub>max</sub> = 50/1.5875 = <strong>31.496 rpm</strong><br>
 ω = 2πN/60 = <strong>0.0660–3.298 rad/s</strong>
 </div>
 
-The required screw speed is 0.6299–31.496 rpm. We corrected the angular-velocity units in the initial calculation: approximately 0.528 rev/s corresponds to 3.30 rad/s. Both screws must rotate together to keep the crosshead level.
+The required screw speed is 0.6299–31.496 rpm. We corrected the angular-velocity units in the initial calculation: 31.496 rpm corresponds to 0.5249 rev/s or 3.298 rad/s. Both screws must rotate together to keep the crosshead level.
 
 ### Torque at maximum specimen load
 
-Patrick’s torque worksheet uses an axial load Q = 1,000 N per screw, friction coefficient μ = 0.80, lead p = 0.0625 in/rev, and thread radius r = 0.1048 in. Using those same inputs in the worksheet equation gives:
+The worksheet inputs are Q = 1,000 N per screw, μ = 0.80, lead ℓ = 0.0625 in/rev, and mean thread radius r<sub>m</sub> = 0.1048 in. The friction coefficient and radius are worksheet assumptions. The radius has not been verified against the selected screw’s pitch diameter.
+
+The worksheet equation treats the thread as square. An Acme thread has a 29° included angle, so the friction term is corrected using the half-angle α = 14.5° and μ′ = μ/cos α. [Acme torque derivation, pp. 190–195](https://www.iare.ac.in/sites/default/files/COURSE%20RESOURCES.pdf); [Autodesk power-screw calculation](https://help.autodesk.com/cloudhelp/2016/ENU/InventorLT-Help/files/GUID-149FFEF7-5A5A-482D-98DC-97F6958898D4.htm).
 
 <div class="a10-eq">
 Q = 1,000 N = <strong>224.81 lbf</strong><br>
-F<sub>t</sub> = Q(p + 2πμr)/(2πr − μp)<br>
-T = F<sub>t</sub>r<br><br>
-F<sub>t</sub> = 224.81[0.0625 + 2π(0.80)(0.1048)]/[2π(0.1048) − 0.80(0.0625)]<br>
-F<sub>t</sub> = <strong>217.72 lbf</strong><br>
-T = 217.72(0.1048) = <strong>22.817 lbf·in per screw</strong>
+μ′ = μ/cos(14.5°)<br>
+tan λ = ℓ/(2πr<sub>m</sub>)<br>
+F<sub>t</sub> = Q(tan λ + μ′)/(1 − μ′ tan λ)<br>
+T = F<sub>t</sub>r<sub>m</sub><br><br>
+T = Qr<sub>m</sub>(ℓ + 2πμ′r<sub>m</sub>)/(2πr<sub>m</sub> − μ′ℓ)<br>
+F<sub>t</sub> = <strong>224.728 lbf</strong><br>
+T = <strong>23.551 lbf·in per screw</strong>
 </div>
 
-The final handwritten page gives 33.8 lbf·in from 0.21 kip × 0.161 in. The multiplication gives 33.81 lbf·in, but 0.161 in is labeled as a minimum diameter, not the thread radius. The corrected result above consistently uses r = 0.1048 in from the preceding torque worksheet. This is the worksheet’s screw-thread friction model; it excludes bearing and transmission losses.
+Using μ directly in the square-thread equation gives 22.817 lbf·in with the same inputs. The Acme-angle correction gives 23.551 lbf·in. Both are conditional thread-torque calculations; neither includes thrust-bearing friction, transmission losses, or crosshead weight.
+
+The final handwritten page records 33.8 lbf·in from approximately 0.21 kip × 0.161 in. The 0.161-in value is a diameter in the thread calculation and cannot be used as the mean radius of a 0.250-in-diameter screw. The calculation above retains the earlier worksheet radius consistently. A final drive-torque selection requires the actual pitch radius and friction conditions.
+
+### Combined axial load and torque
+
+The 0.1461-in root-diameter result checks axial stress only. To check whether the selected 1/4-in screw could meet n = 4 under the worksheet’s μ = 0.80 assumption, we also combined axial and torsional stress using the Acme thread torque above.
+
+<div class="a10-eq">
+σ<sub>a</sub> = 4Q/(πd²)<br>
+τ = 16T/(πd³)<br>
+σ<sub>vM</sub> = √(σ<sub>a</sub>² + 3τ²)<br>
+n = S<sub>y</sub>/σ<sub>vM</sub><br><br>
+For an optimistic solid section with d = 0.250 in:<br>
+σ<sub>a</sub> = <strong>4.580 ksi</strong>; τ = <strong>7.677 ksi</strong><br>
+σ<sub>vM</sub> = <strong>14.063 ksi</strong><br>
+n = 53.664/14.063 = <strong>3.816</strong>
+</div>
+
+Even this full-diameter solid-section estimate is below n = 4 with the worksheet torque assumptions. The actual threaded root is smaller. The axial-only calculation therefore does not approve the selected screw for combined loading; the screw selection and its friction assumptions remain unresolved. [Combined-stress yield criterion](https://help.solidworks.com/2022/english/solidworks/cworks/r_Maximum_von_Mises_Stress_Criterion.htm).
 
 <figure class="a10-figure handwork" id="a10-figure-3"><img src="images/patrick-speed.webp" alt="Patrick Klauser: rotational speed and torque calculations." loading="lazy"><figcaption><strong>Figure 3.</strong> Patrick Klauser: rotational speed and torque calculations. <a href="images/patrick-speed.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure>
 
@@ -125,7 +148,7 @@ We selected bronze nut 95072A881 and mounting flange 95082A641. The nut’s inte
 
 ### Internal thread bending
 
-Knowns: F = 224.81 lbf per nut and p = 0.0625 in. We assumed an effective engagement length L<sub>e</sub> = 0.375 in, root diameter d<sub>r</sub> = 0.161 in, and equal loading across six engaged threads. Unknowns: thread bending stress and required bronze yield strength.
+The worksheet assumes F = 224.81 lbf per nut, p = 0.0625 in, engagement length L<sub>e</sub> = 0.375 in, and equal loading across six threads. It uses d<sub>r</sub> = 0.161 in for the bending-strip circumference. This is a conservative worksheet idealization; the actual nut-root diameter and thread thickness were not verified. Unknowns: bending stress under that model and required yield strength.
 
 <div class="a10-eq">
 N<sub>t</sub> = L<sub>e</sub>/p = 0.375/0.0625 = <strong>6 threads</strong><br>
@@ -216,18 +239,17 @@ We compared the initial plate and the rounded-corner revision using static stres
 |---|---:|---:|
 | Maximum von Mises stress | 2.853 ksi / 19.67 MPa | 3.557 ksi / 24.52 MPa |
 | Maximum plotted resultant displacement | Approximately 0.003 mm | Approximately 0.012 mm |
-| FOS information in the plots | Above the displayed scale of 8 | Minimum FOS = 11.212 |
+| Minimum FOS | Not numerically recorded | 11.212 |
 | Critical stress region | Near the flange mounting holes | Near the flange mounting holes |
 | Largest displacement region | Between the mounting regions | Between the mounting regions |
-| Displacement / 0.100-mm limit | Approximately 3% | Approximately 12% |
 
-The rounded-corner study showed **24.7% higher peak stress** and approximately four times the displacement of the initial study. Its reported minimum FOS of 11.212 exceeds the required 4, and its maximum resultant displacement of 0.012 mm is below 0.100 mm.
+The rounded-corner study showed **24.7% higher peak stress** and approximately four times the displacement of the initial study. The revised study reports a minimum FOS of 11.212 and maximum resultant displacement of approximately 0.012 mm. These are results for the recorded model; the applied load and vertical grip displacement were not separately documented.
 
 <div class="a10-pair"><figure class="a10-figure cad" id="a10-figure-12"><img src="images/stress-before.webp" alt="Initial study: maximum von Mises stress 2.853 ksi. The strongest stress concentrations are near mounting holes. The displayed deformation is exaggerated." loading="lazy"><figcaption><strong>Figure 12.</strong> Initial study: maximum von Mises stress 2.853 ksi. The strongest stress concentrations are near mounting holes. The displayed deformation is exaggerated. <a href="images/stress-before.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure><figure class="a10-figure cad" id="a10-figure-13"><img src="images/stress-after.webp" alt="Revised study: maximum von Mises stress 3.557 ksi. The critical region remains near the attachment holes. The apparent curvature is the displayed deformation." loading="lazy"><figcaption><strong>Figure 13.</strong> Revised study: maximum von Mises stress 3.557 ksi. The critical region remains near the attachment holes. The apparent curvature is the displayed deformation. <a href="images/stress-after.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure></div>
 
 <div class="a10-pair"><figure class="a10-figure cad" id="a10-figure-14"><img src="images/disp-before.webp" alt="Initial study: maximum plotted resultant displacement approximately 0.003 mm." loading="lazy"><figcaption><strong>Figure 14.</strong> Initial study: maximum plotted resultant displacement approximately 0.003 mm. <a href="images/disp-before.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure><figure class="a10-figure cad" id="a10-figure-15"><img src="images/disp-after.webp" alt="Revised study: maximum plotted resultant displacement approximately 0.012 mm." loading="lazy"><figcaption><strong>Figure 15.</strong> Revised study: maximum plotted resultant displacement approximately 0.012 mm. <a href="images/disp-after.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure></div>
 
-<div class="a10-pair"><figure class="a10-figure cad" id="a10-figure-16"><img src="images/fos-before.webp" alt="Initial safety-factor plot. Blue is above the displayed upper scale of 8; it is not an exact numerical minimum." loading="lazy"><figcaption><strong>Figure 16.</strong> Initial safety-factor plot. Blue is above the displayed upper scale of 8; it is not an exact numerical minimum. <a href="images/fos-before.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure><figure class="a10-figure cad" id="a10-figure-17"><img src="images/fos-after.webp" alt="Revised safety-factor plot. The target is 4, and the displayed blue field is above the upper scale." loading="lazy"><figcaption><strong>Figure 17.</strong> Revised safety-factor plot. The target is 4, and the displayed blue field is above the upper scale. <a href="images/fos-after.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure></div>
+<div class="a10-pair"><figure class="a10-figure cad" id="a10-figure-16"><img src="images/fos-before.webp" alt="Initial safety-factor plot. The upper legend value is 8; an exact numerical minimum was not recorded." loading="lazy"><figcaption><strong>Figure 16.</strong> Initial safety-factor plot. The upper legend value is 8; an exact numerical minimum was not recorded. <a href="images/fos-before.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure><figure class="a10-figure cad" id="a10-figure-17"><img src="images/fos-after.webp" alt="Revised safety-factor plot. The target is 4, and the displayed blue field is above the upper scale." loading="lazy"><figcaption><strong>Figure 17.</strong> Revised safety-factor plot. The target is 4, and the displayed blue field is above the upper scale. <a href="images/fos-after.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure></div>
 
 <figure class="a10-figure cad" id="a10-figure-18"><img src="images/fos-detail.webp" alt="Revised study result panel: minimum safety factor 11.212, based on yield strength." loading="lazy"><figcaption><strong>Figure 18.</strong> Revised study result panel: minimum safety factor 11.212, based on yield strength. <a href="images/fos-detail.webp" target="_blank" rel="noopener">Full size</a>.</figcaption></figure>
 
@@ -237,7 +259,7 @@ The initial FOS plot is capped at 8; its exact minimum was not recorded. Crosshe
 
 Mesh-refinement results and element counts were not recorded. The response plots also do not show the applied load magnitude. These two geometry studies therefore document the recorded before-and-after response without establishing mesh convergence. [Fusion mesh convergence guidance](https://help.autodesk.com/cloudhelp/ENU/Fusion-Simulate/files/SIM-MESH-CONVERGENCE.htm).
 
-The fixed mounting-hole restraints contribute to the lower FEA deflections compared with the simply supported beam model.
+The beam and FEA results depend on the support restraints and applied load. The recorded plots do not establish that both FEA studies used the same 2-kN load.
 
 ## Bill of materials
 
@@ -287,4 +309,8 @@ Rounding the outside corners changed the recorded response, but the peak stress 
 - [McMaster nut mounting flanges](https://www.mcmaster.com/products/nonmetallic-acme-nuts/): 95082A641 mounting dimensions.
 - [Roton Acme engineering data](https://www.roton.com/products/acme-lead-screws-nuts/engineering-data/): reference root diameter and screw/nut selection context. Roton values are not a certification of a different manufacturer's screw.
 - [Online Metals 1018 guide](https://www.onlinemetals.com/en/product-guide/alloy/1018): reference steel properties.
+- [IARE Machine Design course notes](https://www.iare.ac.in/sites/default/files/COURSE%20RESOURCES.pdf), pp. 190–195: Acme thread angle and corrected thread torque.
+- [Autodesk power-screw calculation](https://help.autodesk.com/cloudhelp/2016/ENU/InventorLT-Help/files/GUID-149FFEF7-5A5A-482D-98DC-97F6958898D4.htm): mean screw diameter, thread-angle correction, and strength checks.
+- [SOLIDWORKS von Mises criterion](https://help.solidworks.com/2022/english/solidworks/cworks/r_Maximum_von_Mises_Stress_Criterion.htm): combined-stress yield check.
+- [Missouri S&T mechanics formula sheet](https://web.mst.edu/jthomas/classes/2210/formulas/formula_sheet.pdf): bending and center-point-load deflection equations.
 - [Autodesk Fusion mesh convergence](https://help.autodesk.com/cloudhelp/ENU/Fusion-Simulate/files/SIM-MESH-CONVERGENCE.htm): refinement and consistent-location stress comparison.
