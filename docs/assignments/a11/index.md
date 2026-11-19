@@ -45,11 +45,10 @@ We continued the design of the benchtop tensile tester from A10. We selected mot
 
 ## Motor selection — Patrick Klauser
 
-We selected two MOONS’ 34HC1308 three-phase NEMA 34 steppers, one for each screw. Using the A10 lead, the required motor speed with direct coupling is 0.630–31.496 rpm. The original A11 selection used 3.82 N·m at about 30 rpm. We kept 3.82 N·m as the drivetrain sizing input. The checked A10 report calculates 23.551 lbf·in (2.66 N·m) of thread torque for its stated friction and radius. That estimate excludes bearing friction and other drive loads.
+We chose two MOONS’ 34HC1308 stepper motors, one for each screw. Each turn moves the crosshead 1.5875 mm. To move at 1–50 mm/min, each motor needs to turn at about 0.63–31.50 rpm. We used 3.82 N·m per motor for the A11 design calculations, as recorded in our notes.
 
 <div class="a11-eq">
-N = v/ℓ = (1 to 50)/1.5875 = <strong>0.630–31.496 rpm</strong><br>
-T<sub>curve</sub> − T<sub>sizing</sub> = 4.16 − 3.82 = <strong>0.34 N·m</strong> at the 50 rpm comparison point
+Motor speed = crosshead speed ÷ distance per turn = (1 to 50)/1.5875 = <strong>0.63–31.50 rpm</strong>
 </div>
 
 | Motor parameter | Value |
@@ -62,7 +61,7 @@ T<sub>curve</sub> − T<sub>sizing</sub> = 4.16 − 3.82 = <strong>0.34 N·m</st
 | Mounting pattern | Four flange holes matched by the bracket |
 | Numerical efficiency | Unpublished in the motor specifications |
 
-The working notes read approximately 4.16 N·m at 50 rpm from the 48 V curve. The available torque across the required 0.630–31.496 rpm band, including the starting condition, still needs confirmation. [MOONS’ motor specifications and curve downloads](https://www.moonsindustries.com/p/nema-34-smooth-hybrid-stepper-motors/34hc1308-000004611110015035).
+Our notes estimate about 4.16 N·m at 50 rpm from the 48 V curve. This is above the 3.82 N·m used in our calculations, but 50 rpm is outside the tester’s required range. We still need to verify the torque at startup and throughout the range we plan to use. The published 5.4 N·m holding torque applies with the shaft stationary. [MOONS’ motor specifications and curve downloads](https://www.moonsindustries.com/p/nema-34-smooth-hybrid-stepper-motors/34hc1308-000004611110015035).
 
 <figure class="a11-figure " id="a11-figure-2"><img src="images/motor-curve.jpg" alt="Motor torque and temperature rise versus speed from the team’s working report." loading="lazy"><figcaption><strong>Figure 2.</strong> Motor torque and temperature rise versus speed from the team’s working report. <a href="images/motor-curve.jpg" target="_blank" rel="noopener">Full size</a>.</figcaption></figure>
 
@@ -70,7 +69,7 @@ The working notes read approximately 4.16 N·m at 50 rpm from the 48 V curve. Th
 
 The plate uses nominal 0.125-in (3.175-mm) 1018 cold-rolled steel. The drawing shows a 3.24-in square plate, four Ø0.22-in holes, and 0.25-in offsets to the hole centers. The 80 × 40 mm extrusion allowed the motor and bracket to use one four-bolt pattern after the original 1.5-in square extrusion left no material beneath the motor holes.
 
-**Knowns and unknowns.** Use four M5 fasteners, 3.82 N·m of torque, and the worksheet’s 370 MPa yield assumption with a factor of 4. Solve for the load per bolt and minimum thickness for projected hole bearing.
+We checked how hard each bolt presses against its hole when the motor turns. We assumed the four M5 bolts share the torque equally and used the worksheet’s 370 MPa material strength with a safety factor of 4.
 
 <div class="a11-eq">
 s = (3.24 − 2 × 0.25) × 25.4 = 69.596 mm<br>
@@ -81,7 +80,7 @@ t<sub>min</sub> = F<sub>bolt</sub>/(σ<sub>b,allow</sub>d) = 19.4/[92.5(5)] = <s
 σ<sub>b</sub> = 19.4/[5(3.175)] = <strong>1.22 MPa</strong> at the selected thickness
 </div>
 
-The first worksheet used the bolt-hole radius as the lever arm. This check uses the distance from the motor axis to a bolt center and assumes equal load sharing. Projected hole bearing is one check on plate thickness. Plate bending, alignment and service access also govern the final mount.
+The first worksheet used the radius of a bolt hole. The distance we need is from the center of the motor shaft to the center of a bolt. With that correction, the hole bearing check gives 1.22 MPa for the selected plate. The 0.042 mm result is the minimum from that one check. It does not account for bending or keeping the motor aligned.
 
 <div class="a11-pair"><figure class="a11-figure " id="a11-figure-3"><img src="images/mount-plate.jpg" alt="Motor mount plate." loading="lazy"><figcaption><strong>Figure 3.</strong> Motor mount plate. <a href="images/mount-plate.jpg" target="_blank" rel="noopener">Full size</a>.</figcaption></figure><figure class="a11-figure " id="a11-figure-4"><img src="images/mount-installed.jpg" alt="Motor and mount on the revised top extrusion." loading="lazy"><figcaption><strong>Figure 4.</strong> Motor and mount on the revised top extrusion. <a href="images/mount-installed.jpg" target="_blank" rel="noopener">Full size</a>.</figcaption></figure></div>
 
@@ -106,9 +105,9 @@ The worksheet’s first diameter result was smaller than the bore. Solving the f
 
 ## Frame and motor twist — Rick Bhattacharya
 
-**Knowns and unknowns.** The two motor housings each apply a 5.4 N·m reaction in the assumed same-direction holding case. The beam is 12 in long. In the hand model, the supports act at the beam ends and the screws are centered 6 in apart. Solve for the transverse end reactions and the stresses in the trial connection.
+We used 5.4 N·m per motor for a holding case and assumed both motors twist the top frame in the same direction. In our hand calculation, two sideways forces at the ends balance that twist. We assumed the supports are 12 in apart. The screws are 6 in apart and centered between the supports.
 
-<figure class="a11-figure handwork" id="a11-figure-8"><img src="images/frame-handwork.jpg" alt="Original top-view free-body diagram and corner connection calculations. The full beam length is 12 in and the screws are 6 in apart." loading="lazy"><figcaption><strong>Figure 8.</strong> Original top-view free-body diagram and corner connection calculations. The full beam length is 12 in and the screws are 6 in apart. <a href="images/frame-handwork.jpg" target="_blank" rel="noopener">Full size</a>.</figcaption></figure>
+<figure class="a11-figure handwork" id="a11-figure-8"><img src="images/frame-handwork.jpg" alt="Original top-view sketch and calculations. The center spacing label should read 6 in. The 12 in dimension is the assumed span between supports." loading="lazy"><figcaption><strong>Figure 8.</strong> Original top-view sketch and calculations. The center spacing label should read 6 in. The 12 in dimension is the assumed span between supports. <a href="images/frame-handwork.jpg" target="_blank" rel="noopener">Full size</a>.</figcaption></figure>
 
 <div class="a11-eq">
 ΣF<sub>y</sub> = H<sub>A</sub> − H<sub>B</sub> = 0<br>
@@ -117,7 +116,7 @@ H<sub>A</sub> = H<sub>B</sub> = (T<sub>1</sub> + T<sub>2</sub>)/L = (5.4 + 5.4)/
 H<sub>design</sub> = 4(35.43) = <strong>141.7 N</strong> at each end, opposite directions
 </div>
 
-The trial 40 Series angle uses a 6 × 36 mm section and an M8 bolt. With one bolt in shear on the loaded leg, the smooth-shank area is 50.27 mm². The resulting stresses below already include the safety factor in the applied load.
+To see what the end force means for a bracket, we checked a trial 40 Series angle with a 6 mm thick, 36 mm wide section and one M8 bolt on the loaded leg. We used the bolt’s smooth shank area and the 141.7 N load, which already includes the safety factor of 4.
 
 <div class="a11-eq">
 τ<sub>bolt</sub> = 141.7/50.27 = <strong>2.82 MPa</strong><br>
@@ -125,7 +124,7 @@ The trial 40 Series angle uses a 6 × 36 mm section and an M8 bolt. With one bol
 σ<sub>bending</sub> = 6(141.7e)/[36(6²)] = <strong>0.656e MPa</strong>, e in mm
 </div>
 
-The [80/20 40-4302](https://8020.net/40-4302.html) is the comparison connector for this calculation. The modeled connector has its own drawing. Its final check still needs the installed load offset, actual contact and bolt load path, and the T-slot hardware capacities.
+These numbers apply to the trial [80/20 40-4302 angle](https://8020.net/40-4302.html). We drew a different connector for the assembly. To check that connector, we still need its loading dimensions and the capacity of the actual bolts and T-slot hardware.
 
 <figure class="a11-figure " id="a11-figure-9"><img src="images/frame-bracket.jpg" alt="CAD view of the modeled top-to-upright connector." loading="lazy"><figcaption><strong>Figure 9.</strong> CAD view of the modeled top-to-upright connector. <a href="images/frame-bracket.jpg" target="_blank" rel="noopener">Full size</a>.</figcaption></figure>
 
@@ -137,7 +136,7 @@ The study represents the top beam restrained at the ends and loaded at the screw
 |---|---:|
 | Maximum von Mises stress shown on plot | 20.536 MPa |
 | Maximum displacement magnitude shown on plot | 0.012 mm |
-| Safety factor reported in working notes | About 13 |
+| Safety factor recorded in the notes | About 13; exact value not visible on the plot |
 
 <figure class="a11-figure " id="a11-figure-10"><img src="images/fea-setup.jpg" alt="Top extrusion and the screw and bracket interface locations used in the study." loading="lazy"><figcaption><strong>Figure 10.</strong> Top extrusion and the screw and bracket interface locations used in the study. <a href="images/fea-setup.jpg" target="_blank" rel="noopener">Full size</a>.</figcaption></figure>
 
@@ -149,7 +148,7 @@ The displacement magnitude is highest near midspan. A hole in the region marked 
 
 ## Vertical frame FEA — Rick Bhattacharya
 
-The symmetric hand model gives 1,000 N of axial compression per upright and 35.43 N of transverse load at each upright from the holding-torque case. The transverse reactions point in opposite directions. A separate upright simulation and the two mesh refinements are still pending.
+For the upright study, our hand calculations give 1,000 N downward per upright under symmetric loading. The motor twist also gives a sideways load of 35.43 N at each upright, in opposite directions, using the assumed 12 in span. We have no upright simulation results to report.
 
 ## Floating bearing mount — Antonio Chiocca
 
